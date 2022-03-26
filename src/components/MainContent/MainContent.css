@@ -1,0 +1,10 @@
+
+.ContentImage {
+    cursor: pointer;
+    background-size: cover;
+    height: 100%;
+}
+
+#scrollArea::-webkit-scrollbar {
+    display: none;
+}
