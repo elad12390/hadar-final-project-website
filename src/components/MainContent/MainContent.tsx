@@ -17,6 +17,7 @@ export interface MainContentProps {
 export const MainContent: FunctionComponent<MainContentProps> = ({models}) => {
 
     const itemRefs: MutableRefObject<HTMLDivElement[]> = useRef([] as HTMLDivElement[]);
+    const bottomDivRef: MutableRefObject<HTMLDivElement | null> = useRef(null as HTMLDivElement | null);
 
     const [canScroll, setCanScroll] = useState(true);
 
@@ -29,16 +30,29 @@ export const MainContent: FunctionComponent<MainContentProps> = ({models}) => {
     }
 
     const onIntersection: IntersectionObserverCallback = (entries) => {
-        entries
+        const elementScrolledInto = entries
             .filter(entry => entry.isIntersecting)
-            .at(0)?.target
-            .scrollIntoView({ behavior: 'smooth'});
+            .at(0)?.target;
+
+        console.log(elementScrolledInto);
+
+        if (!elementScrolledInto) return;
+
+        elementScrolledInto.scrollIntoView({ behavior: 'smooth'});
 
         // disable scroll temporarily
         setCanScroll(false)
         setTimeout(() => {
             setCanScroll(true)
         }, 200)
+
+        console.log(elementScrolledInto === bottomDivRef.current);
+        if (elementScrolledInto === bottomDivRef.current) {
+            setTimeout(() => {
+                elementScrolledInto.scrollIntoView();
+            }, 300)
+        }
+
 
     }
 
@@ -50,6 +64,10 @@ export const MainContent: FunctionComponent<MainContentProps> = ({models}) => {
 
         for (const element of itemRefs.current) {
             observer.observe(element);
+        }
+
+        if (bottomDivRef.current) {
+            observer.observe(bottomDivRef.current);
         }
 
         return () => observer.disconnect();
@@ -65,5 +83,12 @@ export const MainContent: FunctionComponent<MainContentProps> = ({models}) => {
                     background: `url(${model.image}) fixed center center no-repeat`
                 }}/>
         }) }
+        <section
+            key={`ContentImg-${-1}`}
+            ref={bottomDivRef}
+            className="ContentImage"
+            style={{
+                background: `url(${models.at(-1)?.image}) fixed center center no-repeat`
+            }}/>
     </div>
 }

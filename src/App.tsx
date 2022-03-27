@@ -12,13 +12,27 @@ const App = () => {
 
     useEffect(() => {
         if (!size?.width || !size?.height) { return; }
-        setCircleSize(Math.min(size.width as number, size.height as number)*SIZE_MULTIPLIER);
+        setCircleSize(Math.min(size.width, size.height)*SIZE_MULTIPLIER);
     }, [size])
 
     return (
         <div className="App">
             <CircleCrop size={circleSize}>
                 <MainContent models={[
+                    {
+                        image: 'https://images.unsplash.com/photo-1640622308238-70e5f22fe0be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                        description: '',
+                        lyrics: '',
+                        title: '',
+                        videoUrl: ''
+                    },
+                    {
+                        image: 'https://images.unsplash.com/photo-1648285533370-981a81bf01dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                        description: '',
+                        lyrics: '',
+                        title: '',
+                        videoUrl: ''
+                    },
                     {
                         image: 'https://images.unsplash.com/photo-1640622308238-70e5f22fe0be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
                         description: '',
