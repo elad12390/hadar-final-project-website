@@ -1,7 +1,7 @@
 
 .ContentImage {
     cursor: pointer;
-    background-size: cover;
+    background-size: contain;
     height: 100%;
 }
 
