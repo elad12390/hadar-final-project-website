@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hadar-final-project-website/static/css/main.9fccce08.css",
+    "main.js": "/hadar-final-project-website/static/js/main.ad165df1.js",
+    "static/js/787.0fe84981.chunk.js": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js",
+    "index.html": "/hadar-final-project-website/index.html",
+    "main.9fccce08.css.map": "/hadar-final-project-website/static/css/main.9fccce08.css.map",
+    "main.ad165df1.js.map": "/hadar-final-project-website/static/js/main.ad165df1.js.map",
+    "787.0fe84981.chunk.js.map": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9fccce08.css",
+    "static/js/main.ad165df1.js"
+  ]
+}
