@@ -1,0 +1,52 @@
+@import './src/utils/mixins/RotateText';
+@include rotated-text(110, 360deg);
+.rotated-char {
+    font: 26px Monaco, MonoSpace;
+    position: absolute;
+    width: 20px;
+    left: calc(50% - 13px);
+    top: -40px;
+    transform-origin: bottom center;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.circle-text-wrapper {
+    transform-origin: center;
+    transition: transform .5s ease-in-out;
+    position: absolute;
+}
+
+.wrapped-word {
+    cursor: pointer;
+    &:hover {
+        color: black;
+        & .rotated-char {
+            font-weight: bolder;
+        }
+    }
+
+    &.selected .rotated-char {
+        font-weight: bold;
+    }
+
+}
+
+.circle-drop-shadow {
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.53));
+    //position: relative;
+    //left: 10%;
+}
+
+
+.CircleCrop {
+    clip-path: circle(50.0% at 50% 50%);
+    overflow: auto;
+    padding: 0;
+}
+
+section {
+    display: block;
+}
