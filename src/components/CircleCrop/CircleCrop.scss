@@ -1,16 +1,26 @@
 @import './src/utils/mixins/RotateText';
-@include rotated-text(110, 360deg);
-.rotated-char {
-    font: 26px Monaco, MonoSpace;
+@import url('http://fonts.cdnfonts.com/css/linux-libertine-o');
+
+.text-border {
+    border: 2px solid black;
+    border-radius: 50%;
     position: absolute;
-    width: 20px;
+}
+.rotated-char {
+    text-align: center;
+    font: 26px "Linux Libertine Mono O", serif;
+    position: absolute;
     left: calc(50% - 13px);
-    top: -40px;
+    width: 26px;
     transform-origin: bottom center;
+    vertical-align: center;
 
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    span {
+        text-align: center;
+    }
 }
 
 .circle-text-wrapper {
@@ -36,7 +46,7 @@
 
 .circle-drop-shadow {
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.53));
-    //position: relative;
+    position: fixed;
     //left: 10%;
 }
 

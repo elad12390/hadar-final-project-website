@@ -1,44 +1,82 @@
 import {SongSection} from "../models/general-models";
 
+import synagogueImage from './images/synagogue.png';
+import onTheEdgeImage from './images/on-the-edge.png';
+import lookThroughWindowImage from './images/look-through-window.png';
+import goingToCliffImage from './images/going-to-cliff.png';
+import eyeImage from './images/eye.png';
+
 export const songSections: SongSection[] = [
     {
         id: 0,
-        image: process.env.PUBLIC_URL + '/images/eye.png',
+        image: eyeImage,
         description: '',
         lyrics: '',
-        title: 'eye',
+        title: '1.embraced',
         videoUrl: ''
     },
     {
         id: 1,
-        image: process.env.PUBLIC_URL + '/images/going-to-cliff.png',
+        image: goingToCliffImage,
         description: '',
         lyrics: '',
-        title: 'cliff',
+        title: '2.skin',
         videoUrl: ''
     },
     {
         id: 2,
-        image: process.env.PUBLIC_URL + '/images/look-through-window.png',
+        image: lookThroughWindowImage,
         description: '',
         lyrics: '',
-        title: 'window',
+        title: '3.rain',
         videoUrl: ''
     },
     {
         id: 3,
-        image: process.env.PUBLIC_URL + '/images/on-the-edge.png',
+        image: onTheEdgeImage,
         description: '',
         lyrics: '',
-        title: 'edge',
+        title: '4.marooned',
         videoUrl: ''
     },
     {
         id: 4,
-        image: process.env.PUBLIC_URL + '/images/synagogue.png',
+        image: synagogueImage,
         description: '',
         lyrics: '',
-        title: 'synagogue',
+        title: '5.foes',
+        videoUrl: ''
+    },
+    {
+        id: 5,
+        image: synagogueImage,
+        description: '',
+        lyrics: '',
+        title: '6.possessed',
+        videoUrl: ''
+    },
+    {
+        id: 6,
+        image: synagogueImage,
+        description: '',
+        lyrics: '',
+        title: '7.outcast',
+        videoUrl: ''
+    },
+    {
+        id: 7,
+        image: synagogueImage,
+        description: '',
+        lyrics: '',
+        title: '8.gerush',
+        videoUrl: ''
+    },
+    {
+        id: 8,
+        image: synagogueImage,
+        description: '',
+        lyrics: '',
+        title: '9.void',
         videoUrl: ''
     }
 ];
