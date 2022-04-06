@@ -54,11 +54,7 @@ export const songSections: SongSection[] = [
         lyrics: 'A Black Rose amongst the flowers\n' +
             'A child denied, unwanted\n' +
             'Marooned in the ocean \n' +
-            'Left to wither in the garden\n' +
-            'No hope have I found in old beliefs\n' +
-            'No faith has entered beneath my skin \n' +
-            'My clear mind has forsaken me\n' +
-            'My eyes are deluding me',
+            'Left to wither in the garden\n',
         title: '4.marooned',
         videoUrl: ''
     },
