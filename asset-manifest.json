@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/hadar-final-project-website/static/css/main.9fccce08.css",
-    "main.js": "/hadar-final-project-website/static/js/main.ad165df1.js",
+    "main.css": "/hadar-final-project-website/static/css/main.5b783e2d.css",
+    "main.js": "/hadar-final-project-website/static/js/main.2c639cba.js",
     "static/js/787.0fe84981.chunk.js": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js",
+    "static/media/look-through-window.png": "/hadar-final-project-website/static/media/look-through-window.55340bb2051b727d14bf.png",
+    "static/media/synagogue.png": "/hadar-final-project-website/static/media/synagogue.f790e2d8d847ed7d9db9.png",
+    "static/media/going-to-cliff.png": "/hadar-final-project-website/static/media/going-to-cliff.99f0dfa00f36fda485af.png",
+    "static/media/on-the-edge.png": "/hadar-final-project-website/static/media/on-the-edge.a451985d1eb97255bf1d.png",
+    "static/media/eye.png": "/hadar-final-project-website/static/media/eye.b3377848227af5827603.png",
     "index.html": "/hadar-final-project-website/index.html",
-    "main.9fccce08.css.map": "/hadar-final-project-website/static/css/main.9fccce08.css.map",
-    "main.ad165df1.js.map": "/hadar-final-project-website/static/js/main.ad165df1.js.map",
+    "main.5b783e2d.css.map": "/hadar-final-project-website/static/css/main.5b783e2d.css.map",
+    "main.2c639cba.js.map": "/hadar-final-project-website/static/js/main.2c639cba.js.map",
     "787.0fe84981.chunk.js.map": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fccce08.css",
-    "static/js/main.ad165df1.js"
+    "static/css/main.5b783e2d.css",
+    "static/js/main.2c639cba.js"
   ]
 }
