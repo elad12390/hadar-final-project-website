@@ -12,7 +12,7 @@ export interface CircleCropProps {
 }
 
 export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
-    const letterSpacing = 8;
+    const letterSpacing = 4;
     const circleCircumference = 360;
     const letterDistanceFromCircle = 60;
     let length = 0;
@@ -43,7 +43,7 @@ export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
 
         setPrevRotation(rotation);
 
-        const newDeg = -1 * ((degPerChar * (selected.offset + (selected.title.length / 2))) + 18);
+        const newDeg = -1 * ((degPerChar * (selected.offset + (selected.title.length / 2))) + 12);
 
         setRotation(closestAngle(prevRotation, newDeg));
     },[degPerChar, textButtons, props.selectedIdx])

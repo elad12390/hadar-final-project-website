@@ -10,7 +10,7 @@ import {SongSection} from "./models/general-models";
 import {cacheImages} from "./utils/hooks/useCachedImages";
 
 const App = () => {
-    const SIZE_MULTIPLIER = .7
+    const SIZE_MULTIPLIER = .6
     const size = useWindowSize();
     const [circleSize, setCircleSize] = useState(0);
     const [selectedSection, setSelectedSection] = useState<{
@@ -36,26 +36,51 @@ const App = () => {
 
 
     return (
-        <div className="App">
-            <CircleCrop
-                size={circleSize}
-                models={songSections}
-                onSelect={(selection, sectionIdx) => {
-                    console.log(selection, sectionIdx);
-                    setSelectedSection({
-                        section: selection,
-                        sectionIdx
-                    });
-                }}
-                selectedIdx={selectedSection?.sectionIdx}>
-                <MainContent
+        <>
+            <h1 style={{
+                position: 'fixed',
+                left: '5%',
+                top: `6%`
+            }}>
+                Lied
+            </h1>
+            <h2 style={{
+                position: 'fixed',
+                left: '5%',
+                top: `20%`,
+                whiteSpace: "pre"
+            }}>
+                {selectedSection?.section?.title}
+            </h2>
+            <h4 style={{
+                position: 'fixed',
+                left: '6.5%',
+                top: `25%`,
+                whiteSpace: "pre"
+            }}>
+                {selectedSection?.section?.lyrics}
+            </h4>
+            <div className="image-container">
+                <CircleCrop
+                    size={circleSize}
                     models={songSections}
-                    onClick={(station) => console.log(station)}
-                    selectedIdx={selectedSection?.sectionIdx}
+                    onSelect={(selection, sectionIdx) => {
+                        console.log(selection, sectionIdx);
+                        setSelectedSection({
+                            section: selection,
+                            sectionIdx
+                        });
+                    }}
+                    selectedIdx={selectedSection?.sectionIdx}>
+                    <MainContent
+                        models={songSections}
+                        onClick={(station) => console.log(station)}
+                        selectedIdx={selectedSection?.sectionIdx}
 
-                />
-            </CircleCrop>
-        </div>
+                    />
+                </CircleCrop>
+            </div>
+        </>
     );
 }
 

@@ -11,14 +11,11 @@ export const ContentSection = (
     const model = models.at(idx)
     if (!model) return <></>;
 
-    return <section
+    return <img
+        src={model.image}
         onClick={() => onClick?.(model)}
         key={`ContentImg-${idx}`}
         ref={ref}
-        className="ContentImage"
-        style={{
-            background: `url(${model.image}) fixed center center no-repeat`,
-            backgroundSize: 'contain'
-        }}
+        className="content-image"
     />
 }

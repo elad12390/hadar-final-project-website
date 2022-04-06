@@ -11,7 +11,12 @@ export const songSections: SongSection[] = [
         id: 0,
         image: eyeImage,
         description: '',
-        lyrics: '',
+        lyrics: 'Come here, step close\n' +
+            'into the dark \n' +
+            'to the mist within\n' +
+            'hold me,embrace me\n' +
+            'now that i’m sinking\n' +
+            'no hope have i found',
         title: '1.embraced',
         videoUrl: ''
     },
@@ -19,7 +24,10 @@ export const songSections: SongSection[] = [
         id: 1,
         image: goingToCliffImage,
         description: '',
-        lyrics: '',
+        lyrics: 'No hope have I found in old beliefs\n' +
+            'No faith has entered beneath my skin \n' +
+            'My clear mind has forsaken me\n' +
+            'My eyes are deluding me',
         title: '2.skin',
         videoUrl: ''
     },
@@ -27,7 +35,16 @@ export const songSections: SongSection[] = [
         id: 2,
         image: lookThroughWindowImage,
         description: '',
-        lyrics: '',
+        lyrics: 'Defiled one\n' +
+            'No tomb shall you have\n' +
+            'No eulogy shall you receive\n' +
+            'No tears will be shed for you\n' +
+            '\n' +
+            'Not to the Garden of Eden\n' +
+            'Nor to Gehenom, shall you pass\n' +
+            'Your damned soul shall wander\n' +
+            'between This World\n' +
+            'and the World to Come',
         title: '3.rain',
         videoUrl: ''
     },
@@ -35,7 +52,14 @@ export const songSections: SongSection[] = [
         id: 3,
         image: onTheEdgeImage,
         description: '',
-        lyrics: '',
+        lyrics: 'A Black Rose amongst the flowers\n' +
+            'A child denied, unwanted\n' +
+            'Marooned in the ocean \n' +
+            'Left to wither in the garden\n' +
+            'No hope have I found in old beliefs\n' +
+            'No faith has entered beneath my skin \n' +
+            'My clear mind has forsaken me\n' +
+            'My eyes are deluding me',
         title: '4.marooned',
         videoUrl: ''
     },
@@ -43,7 +67,14 @@ export const songSections: SongSection[] = [
         id: 4,
         image: synagogueImage,
         description: '',
-        lyrics: '',
+        lyrics: 'My hand, it moves,\n' +
+            'Not at my command\n' +
+            'As if it has a will I do not understand\n' +
+            ' \n' +
+            'My legs, slow down!\n' +
+            'I don’t know where I’m bound\n' +
+            'Where are you taking me?\n' +
+            'I beg to turn around',
         title: '5.foes',
         videoUrl: ''
     },
@@ -51,7 +82,7 @@ export const songSections: SongSection[] = [
         id: 5,
         image: synagogueImage,
         description: '',
-        lyrics: '',
+        lyrics: 'Instrumental',
         title: '6.possessed',
         videoUrl: ''
     },
@@ -59,7 +90,18 @@ export const songSections: SongSection[] = [
         id: 6,
         image: synagogueImage,
         description: '',
-        lyrics: '',
+        lyrics: 'It’s taking over her\n' +
+            'This spirit from beyond\n' +
+            'Let us restrain her\n' +
+            'Let us cage her, save our world\n' +
+            '\n' +
+            'Call the Baal Shem to pure her soul\n' +
+            'An exorcism will protect us all\n' +
+            '\n' +
+            'Cleanse our town from this illness\n' +
+            'Wipe her sins in the rain\n' +
+            'There is no need for finesse\n' +
+            'We don’t mind her pain',
         title: '7.outcast',
         videoUrl: ''
     },
@@ -67,15 +109,17 @@ export const songSections: SongSection[] = [
         id: 7,
         image: synagogueImage,
         description: '',
-        lyrics: '',
+        lyrics: 'צא צא צא',
         title: '8.gerush',
         videoUrl: ''
     },
+
+
     {
         id: 8,
         image: synagogueImage,
         description: '',
-        lyrics: '',
+        lyrics: 'Instrumental',
         title: '9.void',
         videoUrl: ''
     }

@@ -1,8 +1,9 @@
 
-.ContentImage {
+.content-image {
     cursor: pointer;
-    background-size: contain;
     height: 100%;
+    transform-origin: center center;
+    transform: scale(1.07);
 }
 
 #scrollArea::-webkit-scrollbar {

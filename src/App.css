@@ -1,9 +1,11 @@
 
-.App {
+.image-container {
   display: flex;
   place-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+  position: relative;
+  left: 15%;
   /*background: black;*/
 }
