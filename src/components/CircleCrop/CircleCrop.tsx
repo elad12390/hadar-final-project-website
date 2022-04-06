@@ -3,6 +3,7 @@ import './CircleCrop.scss'
 import {SongSection} from "../../models/general-models";
 import {useMemoWithArg} from "../../utils/hooks/useMemoWithArg";
 import {closestAngle} from "../../utils/fns";
+import {useWindowSize} from "../../utils/hooks/useWindowSize";
 
 export interface CircleCropProps {
     size: number;
@@ -12,7 +13,8 @@ export interface CircleCropProps {
 }
 
 export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
-    const letterSpacing = 4;
+    const size = useWindowSize();
+    const letterSpacing = (size && size.width!!) < 1000 ? 1 : 4;
     const circleCircumference = 360;
     const letterDistanceFromCircle = 60;
     let length = 0;

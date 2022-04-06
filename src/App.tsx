@@ -23,7 +23,7 @@ const App = () => {
 
     useAsyncEffect(async () => {
         if (!size?.width || !size?.height) { return; }
-        setCircleSize(Math.min(size.width as number, size.height as number)*SIZE_MULTIPLIER);
+        setCircleSize(Math.min(size.width as number * .7, size.height as number)*SIZE_MULTIPLIER);
     }, [size])
 
     useEffect(() => {
