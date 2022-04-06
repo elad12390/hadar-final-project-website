@@ -15,8 +15,7 @@ export const songSections: SongSection[] = [
             'into the dark \n' +
             'to the mist within\n' +
             'hold me,embrace me\n' +
-            'now that i’m sinking\n' +
-            'no hope have i found',
+            'now that i’m sinking',
         title: '1.embraced',
         videoUrl: ''
     },
