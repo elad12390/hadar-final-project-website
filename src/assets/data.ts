@@ -6,6 +6,16 @@ import lookThroughWindowImage from './images/look-through-window.png';
 import goingToCliffImage from './images/going-to-cliff.png';
 import eyeImage from './images/eye.png';
 
+import embracedVideo from './videos/webm/embraced.webm';
+import foesVideo from './videos/webm/foes.webm';
+import rainVideo from './videos/webm/rain.webm';
+import gerushVideo from './videos/webm/Gerush.webm';
+import voidVideo from './videos/webm/void.webm';
+import skinVideo from './videos/webm/skin.webm';
+import posessedVideo from './videos/webm/posessed.webm';
+import maroonedVideo from './videos/webm/marooned.webm';
+import outcastVideo from './videos/webm/outcast.webm';
+
 export const songSections: SongSection[] = [
     {
         id: 0,
@@ -17,7 +27,7 @@ export const songSections: SongSection[] = [
             'hold me,embrace me\n' +
             'now that i’m sinking',
         title: '1.embraced',
-        videoUrl: ''
+        videoUrl: embracedVideo
     },
     {
         id: 1,
@@ -28,7 +38,7 @@ export const songSections: SongSection[] = [
             'My clear mind has forsaken me\n' +
             'My eyes are deluding me',
         title: '2.skin',
-        videoUrl: ''
+        videoUrl: skinVideo
     },
     {
         id: 2,
@@ -45,7 +55,7 @@ export const songSections: SongSection[] = [
             'between This World\n' +
             'and the World to Come',
         title: '3.rain',
-        videoUrl: ''
+        videoUrl: rainVideo
     },
     {
         id: 3,
@@ -56,7 +66,7 @@ export const songSections: SongSection[] = [
             'Marooned in the ocean \n' +
             'Left to wither in the garden\n',
         title: '4.marooned',
-        videoUrl: ''
+        videoUrl: maroonedVideo
     },
     {
         id: 4,
@@ -71,7 +81,7 @@ export const songSections: SongSection[] = [
             'Where are you taking me?\n' +
             'I beg to turn around',
         title: '5.foes',
-        videoUrl: ''
+        videoUrl: foesVideo
     },
     {
         id: 5,
@@ -79,7 +89,7 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'Instrumental',
         title: '6.possessed',
-        videoUrl: ''
+        videoUrl: posessedVideo
     },
     {
         id: 6,
@@ -98,7 +108,7 @@ export const songSections: SongSection[] = [
             'There is no need for finesse\n' +
             'We don’t mind her pain',
         title: '7.outcast',
-        videoUrl: ''
+        videoUrl: outcastVideo
     },
     {
         id: 7,
@@ -106,7 +116,7 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'צא צא צא',
         title: '8.gerush',
-        videoUrl: ''
+        videoUrl: gerushVideo
     },
 
 
@@ -116,6 +126,6 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'Instrumental',
         title: '9.void',
-        videoUrl: ''
+        videoUrl: voidVideo
     }
 ];

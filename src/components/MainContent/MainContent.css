@@ -1,11 +1,4 @@
 
-.content-image {
-    cursor: pointer;
-    height: 100%;
-    transform-origin: center center;
-    transform: scale(1.07);
-}
-
 #scrollArea::-webkit-scrollbar {
     display: none;
 }

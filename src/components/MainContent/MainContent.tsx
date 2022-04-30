@@ -1,5 +1,5 @@
 import React, {
-    ComponentProps,
+    ComponentProps, Fragment,
     FunctionComponent,
     MutableRefObject,
     PropsWithChildren,
@@ -37,8 +37,8 @@ export const MainContent: FunctionComponent<MainContentProps> = ({models, onClic
     }, [selectedIdx])
 
     return <div id="scrollArea" style={{height: '100%', width: '100%', overflow: canScroll ? 'auto' : 'hidden'}}>
-        { models.map((model, idx) => <span hidden={idx !== selectedIdx}>
-            {ContentSection(models, idx, idx, (element) => itemRefs.current[idx] = element as HTMLDivElement, onClick)}
-        </span>) }
+        { models.map((model, idx) => idx === selectedIdx &&
+            ContentSection(models, idx, idx, (element) => itemRefs.current[idx] = element as HTMLDivElement, onClick)
+        ) }
     </div>
 }

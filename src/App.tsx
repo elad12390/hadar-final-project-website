@@ -41,25 +41,7 @@ const App = () => {
                 position: 'fixed',
                 left: '5%',
                 top: `6%`
-            }}>
-                Lied
-            </h1>
-            <h2 style={{
-                position: 'fixed',
-                left: '5%',
-                top: `20%`,
-                whiteSpace: "pre"
-            }}>
-                {selectedSection?.section?.title}
-            </h2>
-            <h4 style={{
-                position: 'fixed',
-                left: '6.5%',
-                top: `25%`,
-                whiteSpace: "pre"
-            }}>
-                {selectedSection?.section?.lyrics}
-            </h4>
+            }}> LI'ED </h1>
             <div className="image-container">
                 <CircleCrop
                     size={circleSize}
