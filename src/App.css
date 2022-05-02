@@ -7,3 +7,25 @@
   height: 100%;
   position: relative;
 }
+
+.mute {
+  position: absolute;
+  left: calc(50% - 2rem);
+  bottom: calc(50% - 2rem);
+  transform: scale(1.5);
+  pointer-events: none;
+  border-radius: 50%;
+  background: white;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+.CircleCrop:hover .mute {
+  opacity: .8;
+}

@@ -9,7 +9,7 @@ import eyeImage from './images/eye.png';
 import embracedVideo from './videos/webm/embraced.webm';
 import foesVideo from './videos/webm/foes.webm';
 import rainVideo from './videos/webm/rain.webm';
-import gerushVideo from './videos/webm/Gerush.webm';
+import gerushVideo from './videos/webm/gerush.webm';
 import voidVideo from './videos/webm/void.webm';
 import skinVideo from './videos/webm/skin.webm';
 import posessedVideo from './videos/webm/posessed.webm';
@@ -72,6 +72,14 @@ export const songSections: SongSection[] = [
         id: 4,
         image: synagogueImage,
         description: '',
+        lyrics: 'Instrumental',
+        title: '5.possessed',
+        videoUrl: posessedVideo
+    },
+    {
+        id: 5,
+        image: synagogueImage,
+        description: '',
         lyrics: 'My hand, it moves,\n' +
             'Not at my command\n' +
             'As if it has a will I do not understand\n' +
@@ -80,16 +88,8 @@ export const songSections: SongSection[] = [
             'I don’t know where I’m bound\n' +
             'Where are you taking me?\n' +
             'I beg to turn around',
-        title: '5.foes',
+        title: '6.foes',
         videoUrl: foesVideo
-    },
-    {
-        id: 5,
-        image: synagogueImage,
-        description: '',
-        lyrics: 'Instrumental',
-        title: '6.possessed',
-        videoUrl: posessedVideo
     },
     {
         id: 6,
@@ -118,8 +118,6 @@ export const songSections: SongSection[] = [
         title: '8.gerush',
         videoUrl: gerushVideo
     },
-
-
     {
         id: 8,
         image: synagogueImage,

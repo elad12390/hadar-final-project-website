@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import React, {Dispatch, useEffect, useMemo, useRef, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {useWindowSize} from "./utils/hooks/useWindowSize";
@@ -8,6 +8,12 @@ import {useAsyncEffect} from "./utils/hooks/useAsyncEffect";
 import {songSections} from "./assets/data";
 import {SongSection} from "./models/general-models";
 import {cacheImages} from "./utils/hooks/useCachedImages";
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+export const Store = React.createContext<{
+    muted?: boolean;
+    setMuted?: Dispatch<boolean>;
+}>({muted: false})
 
 const App = () => {
     const SIZE_MULTIPLIER = .6
@@ -20,6 +26,7 @@ const App = () => {
         section: songSections[0],
         sectionIdx: 0
     });
+    const [muted, setMuted] = useState(true);
 
     useAsyncEffect(async () => {
         if (!size?.width || !size?.height) { return; }
@@ -36,7 +43,7 @@ const App = () => {
 
 
     return (
-        <>
+        <Store.Provider value={{muted, setMuted}}>
             <h1 style={{
                 position: 'fixed',
                 left: '5%',
@@ -56,13 +63,13 @@ const App = () => {
                     selectedIdx={selectedSection?.sectionIdx}>
                     <MainContent
                         models={songSections}
-                        onClick={(station) => console.log(station)}
+                        onClick={(station) => setMuted(muted => !muted)}
                         selectedIdx={selectedSection?.sectionIdx}
-
                     />
+                    <div className={"mute"}>{muted ? <VolumeOffIcon/> : <VolumeUpIcon/>}</div>
                 </CircleCrop>
             </div>
-        </>
+        </Store.Provider>
     );
 }
 

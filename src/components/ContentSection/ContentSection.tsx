@@ -1,6 +1,7 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import {SongSection} from "../../models/general-models";
 import './ContentSection.scss';
+import {Store} from "../../App";
 
 export const ContentSection = (
     models: SongSection[],
@@ -10,6 +11,7 @@ export const ContentSection = (
     onClick?: (section: SongSection) => void
 ) => {
     const playerRef = useRef<HTMLVideoElement>(null);
+    const { muted } = useContext(Store);
 
     const model = models.at(idx)
     if (!model) return <></>;
@@ -20,10 +22,12 @@ export const ContentSection = (
                 ? <video
                     autoPlay
                     loop
+                    muted={muted ? true : undefined}
                     className="content-image"
                     onClick={() => onClick?.(model)}
                     ref={playerRef}
-                    src={model.videoUrl}/>
+                    src={model.videoUrl}
+                />
                 : <img
                     src={model.image}
                     onClick={() => onClick?.(model)}
