@@ -1,0 +1,25 @@
+
+
+.about-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+
+  label {
+    font-size: 18px;
+  }
+
+  input {
+    height: 37px;
+    font-size: 1rem;
+    padding-left: 12px;
+  }
+
+  button.submit {
+
+    background-color: black;
+    width: 100px;
+    font-family: 'Vollkorn', serif;
+    text-transform: none;
+  }
+}

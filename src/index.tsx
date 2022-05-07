@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Intro} from "./Intro/Intro";
+import {BrowserRouter} from "react-router-dom";
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <Intro>
-          <App />
-      </Intro>
+      <BrowserRouter>
+          {/*<Intro>*/}
+              <App />
+          {/*</Intro>*/}
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

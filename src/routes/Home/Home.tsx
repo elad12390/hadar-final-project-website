@@ -1,6 +1,6 @@
-import {CircleCrop} from "../CircleCrop/CircleCrop";
+import {CircleCrop} from "../../components/CircleCrop/CircleCrop";
 import {songSections} from "../../assets/data";
-import {MainContent} from "../MainContent/MainContent";
+import {MainContent} from "../../components/MainContent/MainContent";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import React, {useContext, useEffect, useMemo, useState} from "react";
@@ -13,7 +13,7 @@ import {Store} from "../../App";
 export interface IVideoContentProps {
 }
 
-export const VideoContent = (props: IVideoContentProps) => {
+export const Home = (props: IVideoContentProps) => {
     const SIZE_MULTIPLIER = .6
     const size = useWindowSize();
     const [circleSize, setCircleSize] = useState(0);
