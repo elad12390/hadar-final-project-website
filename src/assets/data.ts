@@ -9,7 +9,7 @@ import eyeImage from './images/eye.png';
 import embracedVideo from './videos/webm/embraced.webm';
 import foesVideo from './videos/webm/foes.webm';
 import rainVideo from './videos/webm/rain.webm';
-import gerushVideo from './videos/webm/gerush.webm';
+import gerushVideo from './videos/webm/Gerush.webm';
 import voidVideo from './videos/webm/void.webm';
 import skinVideo from './videos/webm/skin.webm';
 import posessedVideo from './videos/webm/posessed.webm';

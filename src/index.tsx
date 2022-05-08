@@ -11,9 +11,9 @@ import {BrowserRouter} from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
-          {/*<Intro>*/}
+          <Intro>
               <App />
-          {/*</Intro>*/}
+          </Intro>
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
