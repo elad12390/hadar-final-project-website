@@ -38,8 +38,8 @@ const App = () => {
             <div style={{
                 width: '100%',
                 height: '100%',
-                background: isNightMode ? 'black' : 'white',
-                color: isNightMode ? 'white' : 'black',
+                background: isNightMode ? 'black' : '#fbfaf8',
+                color: isNightMode ? '#fbfaf8' : 'black',
                 transition: isNightMode ? 'background .4s' : 'background .2s',
                 transitionDelay: '.1s'
             }} className='flex-center-contents'>

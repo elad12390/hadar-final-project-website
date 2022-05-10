@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/final-project.iml" filepath="$PROJECT_DIR$/.idea/final-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hadar-final-project-website-server/.idea/hadar-final-project-website-server.iml" filepath="$PROJECT_DIR$/../hadar-final-project-website-server/.idea/hadar-final-project-website-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/assets/icons/.idea/icons.iml" filepath="$PROJECT_DIR$/src/assets/icons/.idea/icons.iml" />
     </modules>
   </component>
 </project>

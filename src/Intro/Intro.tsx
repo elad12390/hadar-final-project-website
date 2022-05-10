@@ -22,6 +22,10 @@ export const Intro: FunctionComponent = ({children}) => {
 
     useEffect(() => {
         const onClick = () => {
+            if (isFinished) {
+                document.removeEventListener('mouseup', onClick)
+                return;
+            }
             console.log('click');
             // leftTextProps.left.set('0%');
         }
