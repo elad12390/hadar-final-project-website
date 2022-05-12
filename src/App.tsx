@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction, useState} from 'react';
 import './App.css';
-import {Link, Route, Routes, useLocation} from "react-router-dom";
+import {Link, Navigate, Route, Router, Routes, useLocation} from "react-router-dom";
 import {Home} from "./routes/Home/Home";
 import {About} from "./routes/About/About";
 import LogoNight from './assets/icons/logo-night.svg';
@@ -46,6 +46,10 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/about" element={<About/>}/>
+                    {/*<Route*/}
+                    {/*    path="*"*/}
+                    {/*    element={<Navigate to="/" replace />}*/}
+                    {/*/>*/}
                 </Routes>
             </div>
             <Link hidden={location.pathname.includes('about')} to={'/about'} style={{color: 'black'}}><h2 style={{

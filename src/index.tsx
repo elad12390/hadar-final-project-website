@@ -10,7 +10,7 @@ import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename={'/hadar-final-project-website'}>
           <Intro>
               <App />
           </Intro>

@@ -41,7 +41,7 @@ export const Home = (props: IVideoContentProps) => {
 
 
     return <>
-        <div className="image-container">
+        <div className="image-container" style={{backgroundImage: `url(/${process.env.PUBLIC_URL}/images/background.png)`}}>
             <CircleCrop
                 size={circleSize}
                 models={songSections}
