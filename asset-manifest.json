@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/hadar-final-project-website/static/css/main.012bceed.css",
-    "main.js": "/hadar-final-project-website/static/js/main.b08a4409.js",
+    "main.css": "/hadar-final-project-website/static/css/main.8c345d91.css",
+    "main.js": "/hadar-final-project-website/static/js/main.e00c332b.js",
     "static/js/787.0fe84981.chunk.js": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js",
     "static/media/void.webm": "/hadar-final-project-website/static/media/void.c83defac0e5b1d893833.webm",
     "static/media/foes.webm": "/hadar-final-project-website/static/media/foes.273ef81b6cbfb47844c0.webm",
     "static/media/embraced.webm": "/hadar-final-project-website/static/media/embraced.9b27751e4c3bff0e2a04.webm",
     "static/media/Gerush.webm": "/hadar-final-project-website/static/media/Gerush.43ee792bd0476601e7c4.webm",
     "static/media/posessed.webm": "/hadar-final-project-website/static/media/posessed.bd637b924371f500f08f.webm",
+    "static/media/skin.webm": "/hadar-final-project-website/static/media/skin.b13c33156352c92e9a8b.webm",
     "static/media/look-through-window.png": "/hadar-final-project-website/static/media/look-through-window.55340bb2051b727d14bf.png",
     "static/media/synagogue.png": "/hadar-final-project-website/static/media/synagogue.f790e2d8d847ed7d9db9.png",
     "static/media/going-to-cliff.png": "/hadar-final-project-website/static/media/going-to-cliff.99f0dfa00f36fda485af.png",
@@ -15,19 +16,26 @@
     "static/media/eye.png": "/hadar-final-project-website/static/media/eye.b3377848227af5827603.png",
     "static/media/outcast.webm": "/hadar-final-project-website/static/media/outcast.1c1f648f9b4b3b1a5318.webm",
     "static/media/rain.webm": "/hadar-final-project-website/static/media/rain.e77c9f14037519a5268e.webm",
-    "static/media/skin.webm": "/hadar-final-project-website/static/media/skin.81e84648fde4291943dd.webm",
+    "static/media/narkisim-italic-webfont.woff": "/hadar-final-project-website/static/media/narkisim-italic-webfont.39e7288be11531b530a9.woff",
+    "static/media/narkisim-bolditalic-webfont.woff": "/hadar-final-project-website/static/media/narkisim-bolditalic-webfont.1bcb2c17689ff02fd89d.woff",
+    "static/media/narkisim-bold-webfont.woff": "/hadar-final-project-website/static/media/narkisim-bold-webfont.9f8ae3e6e480c2cd2ef8.woff",
+    "static/media/narkisim-medium-webfont.woff": "/hadar-final-project-website/static/media/narkisim-medium-webfont.dbf43ce5d47a0c494b36.woff",
     "static/media/marooned.webm": "/hadar-final-project-website/static/media/marooned.078a16f3d0195fd2077f.webm",
+    "static/media/narkisim-bolditalic-webfont.woff2": "/hadar-final-project-website/static/media/narkisim-bolditalic-webfont.769c83e9e85cd35129ee.woff2",
+    "static/media/narkisim-italic-webfont.woff2": "/hadar-final-project-website/static/media/narkisim-italic-webfont.1ad946a24a329cb911eb.woff2",
+    "static/media/narkisim-bold-webfont.woff2": "/hadar-final-project-website/static/media/narkisim-bold-webfont.1ce1f37228b338dce029.woff2",
+    "static/media/narkisim-medium-webfont.woff2": "/hadar-final-project-website/static/media/narkisim-medium-webfont.7146ae3e06eca73d682b.woff2",
     "static/media/logo-night.svg": "/hadar-final-project-website/static/media/logo-night.eecb55cbfccb08bf9069c1175d62cf36.svg",
     "static/media/logo-day.svg": "/hadar-final-project-website/static/media/logo-day.2b544f44dba49cefb439b88c0bb2608b.svg",
     "index.html": "/hadar-final-project-website/index.html",
     "static/media/icon-closing-about.svg": "/hadar-final-project-website/static/media/icon-closing-about.5c0cfd1f004e51ba5e55170ff41ca373.svg",
     "static/media/icon-opening-about.svg": "/hadar-final-project-website/static/media/icon-opening-about.89474613e926a3ef58ffbabcf25feaf0.svg",
-    "main.012bceed.css.map": "/hadar-final-project-website/static/css/main.012bceed.css.map",
-    "main.b08a4409.js.map": "/hadar-final-project-website/static/js/main.b08a4409.js.map",
+    "main.8c345d91.css.map": "/hadar-final-project-website/static/css/main.8c345d91.css.map",
+    "main.e00c332b.js.map": "/hadar-final-project-website/static/js/main.e00c332b.js.map",
     "787.0fe84981.chunk.js.map": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.012bceed.css",
-    "static/js/main.b08a4409.js"
+    "static/css/main.8c345d91.css",
+    "static/js/main.e00c332b.js"
   ]
 }
