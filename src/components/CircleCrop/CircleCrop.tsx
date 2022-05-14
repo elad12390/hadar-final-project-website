@@ -83,7 +83,8 @@ export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
                                     style={{
                                         height: props.size / 2 + letterDistanceFromCircle,
                                         top: -letterDistanceFromCircle,
-                                        transform: `rotate(${calcCharRotation(section.offset + charIdx + letterSpacing)}deg)`
+                                        transform: `rotate(${calcCharRotation(section.offset + charIdx + letterSpacing)}deg)`,
+                                        fontSize: 26 - letterSpacing
                                     }}>
                                     <span>{a}</span>
                                 </span>
