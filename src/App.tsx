@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React, {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import './App.css';
 import {Link, Navigate, Route, Router, Routes, useLocation} from "react-router-dom";
 import {Home} from "./routes/Home/Home";
@@ -22,7 +22,10 @@ const App = () => {
 
     const [muted, setMuted] = useState(true);
     const location = useLocation();
-    const [isNightMode, setIsNightMode] = useState(location.pathname.includes('about'));
+    const [isNightMode, setIsNightMode] = useState(false);
+    useEffect(() => {
+        setIsNightMode(location.pathname.includes('about'));
+    }, [location])
 
 
     // setMuted((m) => !m)
