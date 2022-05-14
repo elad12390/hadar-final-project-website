@@ -10,7 +10,7 @@ import embracedVideo from './videos/webm/embraced.webm';
 import foesVideo from './videos/webm/foes.webm';
 import rainVideo from './videos/webm/rain.webm';
 import gerushVideo from './videos/webm/Gerush.webm';
-import voidVideo from './videos/webm/void.webm';
+import voidVideo from './videos/mp4/void.mp4';
 import skinVideo from './videos/webm/skin.webm';
 import posessedVideo from './videos/webm/posessed.webm';
 import maroonedVideo from './videos/webm/marooned.webm';
