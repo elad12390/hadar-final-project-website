@@ -3,8 +3,9 @@
 @import url('./assets/fonts/narkisim/stylesheet.css');
 
 
+
 body {
-  font-family: 'Vollkorn', 'narkisim', serif;
+  font-family: 'Vollkorn', 'NarkisimMF', serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

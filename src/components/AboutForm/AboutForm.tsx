@@ -5,13 +5,15 @@ import {Language} from "../LanguageSelector/LanguageSelector";
 import axios from 'axios';
 
 export interface IAboutFormProps {
+    isSmaller: boolean;
+    size: number;
     style?: CSSProperties;
     language: Language;
     className?: string;
 }
 
 export const AboutForm = (props: IAboutFormProps) => {
-    console.log(props.style);
+    console.log(props.isSmaller);
     const [sentEmail, setSentEmail] = useState(false);
     const [email, setEmail] = useState<string>('');
 
@@ -42,9 +44,9 @@ export const AboutForm = (props: IAboutFormProps) => {
     const current = props.language === Language.ENGLISH ? english : hebrew;
 
     return <form
-        style={{...props.style}}
+        style={{width: props.size, height: props.size, ...props.style}}
         onSubmit={submit}
-        className={`about-form-container ${props.className}`}>
+        className={`about-form-container ${props.className} ` + (props.isSmaller ? 'smaller' : '')}>
         <div className={`inner-container ${sentEmail ? 'thank-you' :''}`} dir={current.dir}>
             {sentEmail
                 ? <>

@@ -3,8 +3,6 @@
 .about-form-container {
   border: 1px solid #fbfaf8;
   border-radius: 50%;
-  height: 310px;
-  width: 310px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,6 +50,31 @@
       padding: 0;
       label {
         font-size: 60px;
+      }
+    }
+  }
+}
+
+.about-form-container.smaller {
+
+  div.inner-container {
+    padding-top: 1rem;
+    gap: .5rem;
+
+    label {
+      font-size: 14px;
+    }
+
+    input {
+      height: 20px;
+      width: 150px;
+    }
+
+    button.submit {
+    }
+
+    &.thank-you {
+      label {
       }
     }
   }

@@ -31,7 +31,7 @@ const App = () => {
             <Link to={'/'} style={{
                 position: 'fixed',
                 left: '5%',
-                top: `6%`,
+                bottom: `90%`,
                 textDecoration: 'none',
                 color: 'black'
             }} onClick={() => setIsNightMode(false)}><img src={isNightMode ? LogoNight : LogoDay}/></Link>
@@ -46,16 +46,17 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/about" element={<About/>}/>
-                    {/*<Route*/}
-                    {/*    path="*"*/}
-                    {/*    element={<Navigate to="/" replace />}*/}
-                    {/*/>*/}
+                    <Route
+                        path="*"
+                        element={<Navigate to="/" replace />}
+                    />
                 </Routes>
             </div>
             <Link hidden={location.pathname.includes('about')} to={'/about'} style={{color: 'black'}}><h2 style={{
                 position: 'fixed',
                 right: '5%',
-                top: `6%`
+                bottom: `calc(91% - 2px)`,
+                margin: 0
             }} onClick={() => setIsNightMode(true)}>About</h2></Link>
 
         </Store.Provider>

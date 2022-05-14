@@ -3,7 +3,8 @@ import {AboutForm} from "../../components/AboutForm/AboutForm";
 import OpenAboutIcon from '../../assets/icons/icon-opening-about.svg';
 import CloseAboutIcon from '../../assets/icons/icon-closing-about.svg';
 import {Language, LanguageSelector} from "../../components/LanguageSelector/LanguageSelector";
-import {useState} from "react";
+import {useMemo, useState} from "react";
+import {useWindowSize} from "../../utils/hooks/useWindowSize";
 
 export const About = () => {
     const [language, setLanguage] = useState(Language.ENGLISH);
@@ -26,8 +27,18 @@ export const About = () => {
 
     const paragraphs = language === Language.ENGLISH ? englishParagraphs : hebrewParagraphs;
 
+    const windowSize = useWindowSize();
+
+    const minWindowSize = useMemo(() => Math.min(windowSize.width as number, windowSize.height as number), [windowSize.width, windowSize.height]);
+
+    const isSmallerCircle = minWindowSize <  1000;
+
+    const size = isSmallerCircle ? 200 : 300;
+    const formSpacing = isSmallerCircle ? 2 : 5;
+    console.log(minWindowSize);
+
     return <span className="about">
-        <div className="about-container">
+        <div className={"about-container " + (isSmallerCircle ? 'smaller' : '')}>
             <div className="title">
                 <img src={OpenAboutIcon} className="icon" alt={'opening-icon'}/>
                 <div className="content">About</div>
@@ -37,8 +48,14 @@ export const About = () => {
             {paragraphs.map((paragraph, idx) => <p style={{margin: 1}} key={idx} className={'description'}>{paragraph}</p> )}
             <div className="spacer"/>
         </div>
-        <AboutForm style={{
-            left: language === Language.ENGLISH ? '5%' : 'calc(100% - 352px - 5%)'
-        }} language={language} className="form"/>
+        <AboutForm
+            style={{
+                left: language === Language.ENGLISH ? `${formSpacing}%` : `calc(100% - ${size + 50}px - ${formSpacing}%)`,
+            }}
+            language={language}
+            className="form"
+            size={size}
+            isSmaller={isSmallerCircle}
+        />
     </span>
 }

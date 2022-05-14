@@ -14,7 +14,7 @@ export interface CircleCropProps {
 
 export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
     const size = useWindowSize();
-    const letterSpacing = (size && size.width!!) < 1000 ? 1 : 4;
+    const letterSpacing = props.size < 500 ? 2 : 4;
     const circleCircumference = 360;
     const letterDistanceFromCircle = 60;
     let length = 0;
