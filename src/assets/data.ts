@@ -7,7 +7,7 @@ import goingToCliffImage from './images/going-to-cliff.png';
 import eyeImage from './images/eye.png';
 
 import embracedVideo from './videos/webm/embraced.webm';
-import foesVideo from './videos/webm/foes.webm';
+import foesVideo from './videos/mp4/foes.mp4';
 import rainVideo from './videos/webm/rain.webm';
 import gerushVideo from './videos/webm/Gerush.webm';
 import voidVideo from './videos/mp4/void.mp4';
