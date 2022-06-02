@@ -6,16 +6,6 @@ import lookThroughWindowImage from './images/look-through-window.png';
 import goingToCliffImage from './images/going-to-cliff.png';
 import eyeImage from './images/eye.png';
 
-import embracedVideo from './videos/webm/embraced.webm';
-import foesVideo from './videos/webm/foes.webm';
-import rainVideo from './videos/webm/rain.webm';
-import gerushVideo from './videos/webm/Gerush.webm';
-import voidVideo from './videos/webm/void.webm';
-import skinVideo from './videos/webm/skin.webm';
-import posessedVideo from './videos/webm/posessed.webm';
-import maroonedVideo from './videos/webm/marooned.webm';
-import outcastVideo from './videos/webm/outcast.webm';
-
 export const songSections: SongSection[] = [
     {
         id: 0,
@@ -27,7 +17,7 @@ export const songSections: SongSection[] = [
             'hold me,embrace me\n' +
             'now that i’m sinking',
         title: '1.embraced',
-        videoUrl: embracedVideo
+        videoUrl: 'https://drive.google.com/uc?id=1i52EEsufYHdrjbUsO3MscwddBJhTsTgO'
     },
     {
         id: 1,
@@ -38,7 +28,7 @@ export const songSections: SongSection[] = [
             'My clear mind has forsaken me\n' +
             'My eyes are deluding me',
         title: '2.skin',
-        videoUrl: skinVideo
+        videoUrl: 'https://drive.google.com/uc?id=1efJJ-SbJ7_Y0PyXv0MoKtsr_Hi-2K-c3'
     },
     {
         id: 2,
@@ -55,7 +45,7 @@ export const songSections: SongSection[] = [
             'between This World\n' +
             'and the World to Come',
         title: '3.rain',
-        videoUrl: rainVideo
+        videoUrl: 'https://drive.google.com/uc?id=1XkGOUnBW5X65_jtu-j95ws1_e4qseFgp'
     },
     {
         id: 3,
@@ -66,7 +56,7 @@ export const songSections: SongSection[] = [
             'Marooned in the ocean \n' +
             'Left to wither in the garden\n',
         title: '4.marooned',
-        videoUrl: maroonedVideo
+        videoUrl: 'https://drive.google.com/uc?id=1s_s8BJg3LH_k3vdeBZSthKPfppGQRMjZ'
     },
     {
         id: 4,
@@ -74,7 +64,7 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'Instrumental',
         title: '5.possessed',
-        videoUrl: posessedVideo
+        videoUrl: 'https://drive.google.com/uc?id=1COPL2r35PfMYXaqOABKp7jpeuUkjumUQ'
     },
     {
         id: 5,
@@ -89,8 +79,8 @@ export const songSections: SongSection[] = [
             'Where are you taking me?\n' +
             'I beg to turn around',
         title: '6.foes',
-        videoUrl: foesVideo
-    },
+        videoUrl: 'https://drive.google.com/uc?id=1KPaJMBHtnptJtS_-AE_ap3t7IsTM4lKs'
+},
     {
         id: 6,
         image: synagogueImage,
@@ -108,7 +98,7 @@ export const songSections: SongSection[] = [
             'There is no need for finesse\n' +
             'We don’t mind her pain',
         title: '7.outcast',
-        videoUrl: outcastVideo
+        videoUrl: 'https://drive.google.com/uc?id=10H1nzwcuXfEQlGtwHDmwMqlO54Qshd20'
     },
     {
         id: 7,
@@ -116,7 +106,7 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'צא צא צא',
         title: '8.gerush',
-        videoUrl: gerushVideo
+        videoUrl: 'https://drive.google.com/uc?id=1efJJ-SbJ7_Y0PyXv0MoKtsr_Hi-2K-c3'
     },
     {
         id: 8,
@@ -124,6 +114,6 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'Instrumental',
         title: '9.void',
-        videoUrl: voidVideo
+        videoUrl: 'https://drive.google.com/uc?id=1Jx5ZruNJF1Br_CMJAWNC4bGY6-uWGpWJ'
     }
 ];

@@ -37,8 +37,8 @@ export const MainContent: FunctionComponent<MainContentProps> = ({models, onClic
     }, [selectedIdx])
 
     return <div id="scrollArea" style={{height: '100%', width: '100%', overflow: canScroll ? 'auto' : 'hidden'}}>
-        { models.map((model, idx) => idx === selectedIdx &&
-            ContentSection(models, idx, idx, (element) => itemRefs.current[idx] = element as HTMLDivElement, onClick)
+        { models.map((model, idx) =>
+            ContentSection(models, idx, idx, idx !== selectedIdx,(element) => itemRefs.current[idx] = element as HTMLDivElement, onClick)
         ) }
     </div>
 }
