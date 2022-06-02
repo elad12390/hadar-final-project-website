@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hadar-final-project-website/static/css/main.d4a32952.css",
-    "main.js": "/hadar-final-project-website/static/js/main.19b97f0c.js",
+    "main.js": "/hadar-final-project-website/static/js/main.32d501bf.js",
     "static/js/787.0fe84981.chunk.js": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js",
     "static/media/look-through-window.png": "/hadar-final-project-website/static/media/look-through-window.55340bb2051b727d14bf.png",
     "static/media/synagogue.png": "/hadar-final-project-website/static/media/synagogue.f790e2d8d847ed7d9db9.png",
@@ -30,11 +30,11 @@
     "static/media/icon-closing-about.svg": "/hadar-final-project-website/static/media/icon-closing-about.5c0cfd1f004e51ba5e55170ff41ca373.svg",
     "static/media/icon-opening-about.svg": "/hadar-final-project-website/static/media/icon-opening-about.89474613e926a3ef58ffbabcf25feaf0.svg",
     "main.d4a32952.css.map": "/hadar-final-project-website/static/css/main.d4a32952.css.map",
-    "main.19b97f0c.js.map": "/hadar-final-project-website/static/js/main.19b97f0c.js.map",
+    "main.32d501bf.js.map": "/hadar-final-project-website/static/js/main.32d501bf.js.map",
     "787.0fe84981.chunk.js.map": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d4a32952.css",
-    "static/js/main.19b97f0c.js"
+    "static/js/main.32d501bf.js"
   ]
 }
