@@ -28,7 +28,7 @@ export const songSections: SongSection[] = [
             'My clear mind has forsaken me\n' +
             'My eyes are deluding me',
         title: '2.skin',
-        videoUrl: 'https://drive.google.com/uc?id=1efJJ-SbJ7_Y0PyXv0MoKtsr_Hi-2K-c3'
+        videoUrl: 'https://drive.google.com/uc?id=1VvUuLepUpAyXZWcFUjPxKAA79qWQt_6C'
     },
     {
         id: 2,
