@@ -60,6 +60,7 @@ export const Home = (props: IVideoContentProps) => {
                 />
                 <div className={"mute"}>{muted ? <VolumeOffIcon/> : <VolumeUpIcon/>}</div>
             </CircleCrop>
+            <div id={"lyrics"} style={{zIndex: 3, position: 'absolute', bottom: '5%'}}/>
         </div>
     </>
 }

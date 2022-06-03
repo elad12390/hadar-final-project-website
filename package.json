@@ -24,6 +24,7 @@
     "react-scripts": "5.0.0",
     "react-spring": "^9.4.4",
     "sass": "^1.49.11",
+    "srt-parser-2": "^1.1.7",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
@@ -52,5 +53,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "raw-loader": "^4.0.2",
+    "raw.macro": "^0.4.2"
   }
 }

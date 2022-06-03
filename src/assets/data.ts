@@ -6,6 +6,12 @@ import lookThroughWindowImage from './images/look-through-window.png';
 import goingToCliffImage from './images/going-to-cliff.png';
 import eyeImage from './images/eye.png';
 
+import raw from 'raw.macro';
+import testVideo from './test/test.mp4';
+import SrtParser from 'srt-parser-2';
+const parser = new SrtParser();
+
+
 export const songSections: SongSection[] = [
     {
         id: 0,
@@ -114,6 +120,19 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'Instrumental',
         title: '9.void',
-        videoUrl: 'https://drive.google.com/uc?id=1Jx5ZruNJF1Br_CMJAWNC4bGY6-uWGpWJ'
-    }
+        videoUrl: 'https://drive.google.com/uc?id=1aGRfld3Woa3zdwU9DujExm4S9iZ-7K8u'
+    },
+    // {
+    //     id: 9,
+    //     image: '',
+    //     description: '',
+    //     lyrics: '',
+    //     title: 'Test',
+    //     videoUrl: testVideo,
+    //     subtitles: (() => {
+    //         const srt = raw('./test/test.srt');
+    //         console.log({srt})
+    //         return parser.fromSrt(srt);
+    //     })()
+    // }
 ];
