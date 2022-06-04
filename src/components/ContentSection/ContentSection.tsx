@@ -81,22 +81,19 @@ export const ContentSection = (
         const lyrics = document.getElementById('lyrics');
         if (!lyrics) return;
 
-        let fontSize = 1.4;
+        let fontSize = 1.5;
         if (isMediumSize) {
-            fontSize = 1.2;
+            fontSize = 1.3;
         } else if (isSmallSize) {
-            fontSize = 1;
+            fontSize = 1.2;
         }
         return ReactDOM.createPortal(
-            // Any valid React child: JSX, strings, arrays, etc.
             (
-                <div style={{ fontSize: '1.4em' }}>
-                    <div style={{
-                        fontSize: fontSize + 'rem',
-                    }}>{currentLyric?.text}</div>
-                </div>
+                <div style={{
+                    fontSize: fontSize + 'rem',
+                    userSelect: 'none',
+                }}>{currentLyric?.text}</div>
             ),
-            // A DOM element
             lyrics
         );
     }

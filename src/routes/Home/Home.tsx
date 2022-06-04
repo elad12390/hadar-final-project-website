@@ -10,10 +10,7 @@ import {useAsyncEffect} from "../../utils/hooks/useAsyncEffect";
 import {cacheImages} from "../../utils/hooks/useCachedImages";
 import {Store} from "../../App";
 
-export interface IVideoContentProps {
-}
-
-export const Home = (props: IVideoContentProps) => {
+export const Home = () => {
     const SIZE_MULTIPLIER = .6
     const size = useWindowSize();
     const [circleSize, setCircleSize] = useState(0);
@@ -39,6 +36,17 @@ export const Home = (props: IVideoContentProps) => {
         cacheImages(songSections.map(section => section.image));
     }, [])
 
+    const [largeTextBorderBottom, setLargeTextBorderBottom] = useState(0);
+
+    useEffect(() => {
+        const element = document.getElementById("large-text-border");
+        if (!element) { return; }
+        setTimeout(() => {
+            if (!size?.width || !size?.height) { return; }
+            const bottom = element.getBoundingClientRect().bottom;
+            setLargeTextBorderBottom((size.height - bottom)/2);
+        }, 100)
+    })
 
     return <>
         <div className="image-container" style={{backgroundImage: `url(/${process.env.PUBLIC_URL}/images/background.png)`}}>
@@ -68,7 +76,7 @@ export const Home = (props: IVideoContentProps) => {
                 />
                 <div className={"mute"}>{muted ? <VolumeOffIcon/> : <VolumeUpIcon/>}</div>
             </CircleCrop>
-            <div id={"lyrics"} style={{zIndex: 3, position: 'absolute', bottom: '5%'}}/>
+            <div id={"lyrics"} style={{zIndex: 3, position: 'absolute', bottom: `${largeTextBorderBottom - 14}px`}}/>
         </div>
     </>
 }

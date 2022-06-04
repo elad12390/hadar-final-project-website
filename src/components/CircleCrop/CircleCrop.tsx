@@ -52,18 +52,18 @@ export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
 
     return (
         <>
-            <div className="text-border"
+            <div className="text-border" id="large-text-border"
                  style={{
                      width: props.size + 150,
                      height: props.size + 150
                  }}
-            ></div>
+            />
             <div className="text-border"
                  style={{
                      width: props.size + 20,
                      height: props.size + 20
                  }}
-            ></div>
+            />
             <span className="circle-drop-shadow">
                 <span className="circle-text-wrapper" style={{
                     width: props.size,

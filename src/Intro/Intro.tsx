@@ -24,18 +24,14 @@ export const Intro = ({children, onFinished}: IntroProps) => {
 
     useEffect(() => {
         const onClick = () => {
-            if (isFinished) {
-                document.removeEventListener('mouseup', onClick)
-                return;
-            }
-            console.log('click');
+            if (isFinished) { document.removeEventListener('mouseup', onClick); return; }
             setAnimatedSize(0);
+            console.log('click');
             setTimeout(() => {
                 setIsFinished(true);
-                setTimeout(() => {
-                    setMainContentSize(1);
-                    onFinished?.();
-                }, 100)
+                setMainContentSize(1);
+                onFinished?.();
+                document.removeEventListener('mouseup', onClick)
             }, animationDelay)
             // leftTextProps.left.set('0%');
         }
