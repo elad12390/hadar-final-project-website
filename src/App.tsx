@@ -12,16 +12,19 @@ export const Store = React.createContext<{
     setMuted: Dispatch<SetStateAction<boolean>>;
     isNightMode: boolean;
     setIsNightMode: Dispatch<SetStateAction<boolean>>;
+    isPlaying: boolean;
 }>({
     muted: false,
     setMuted: () => {},
     isNightMode: false,
-    setIsNightMode: () => {}
+    setIsNightMode: () => {},
+    isPlaying: false
 })
 
 const App = () => {
 
-    const [muted, setMuted] = useState(false);
+    const [muted, setMuted] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const location = useLocation();
     const [isNightMode, setIsNightMode] = useState(false);
     useEffect(() => {
@@ -31,7 +34,7 @@ const App = () => {
 
     // setMuted((m) => !m)
     return (
-        <Store.Provider value={{muted, setMuted, isNightMode, setIsNightMode}}>
+        <Store.Provider value={{muted, setMuted, isNightMode, setIsNightMode, isPlaying}}>
             <Link to={'/'} style={{
                 position: 'fixed',
                 left: '5%',
@@ -48,7 +51,10 @@ const App = () => {
                 transitionDelay: '.1s'
             }} className='flex-center-contents'>
                     <Routes>
-                        <Route path="/" element={<Intro><Home/></Intro>}/>
+                        <Route path="/" element={<Intro onFinished={() => {
+                            setMuted(false);
+                            setIsPlaying(true);
+                        }}><Home/></Intro>}/>
                         <Route path="/about" element={<About/>}/>
                         <Route
                             path="*"

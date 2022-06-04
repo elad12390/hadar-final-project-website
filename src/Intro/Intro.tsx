@@ -1,4 +1,4 @@
-import {FunctionComponent, useEffect, useMemo, useState} from "react";
+import {FunctionComponent, ReactElement, useEffect, useMemo, useState} from "react";
 import {animated, useSpring, useTransition} from 'react-spring';
 import './Intro.scss';
 import {useWindowSize} from "../utils/hooks/useWindowSize";
@@ -7,7 +7,11 @@ import {useWindowSize} from "../utils/hooks/useWindowSize";
 const initialDistance = 300;
 const animationDelay = 200;
 
-export const Intro: FunctionComponent = ({children}) => {
+export interface IntroProps extends React.PropsWithChildren<any> {
+    onFinished: () => void;
+}
+
+export const Intro = ({children, onFinished}: IntroProps) => {
     const [isFinished, setIsFinished] = useState(false);
     const [animationState, setAnimationState] = useState(0);
     const size = useWindowSize();
@@ -28,7 +32,10 @@ export const Intro: FunctionComponent = ({children}) => {
             setAnimatedSize(0);
             setTimeout(() => {
                 setIsFinished(true);
-                setTimeout(() => setMainContentSize(1), 100)
+                setTimeout(() => {
+                    setMainContentSize(1);
+                    onFinished?.();
+                }, 100)
             }, animationDelay)
             // leftTextProps.left.set('0%');
         }

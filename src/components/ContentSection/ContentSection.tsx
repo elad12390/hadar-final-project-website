@@ -4,6 +4,7 @@ import './ContentSection.scss';
 import {Store} from "../../App";
 import {convertTimestampToSeconds, isWithinTimestamps, throttle} from "../../utils/fns";
 import ReactDOM from "react-dom";
+import {useMediaQuery} from "../../utils/hooks/useMediaQuery";
 
 export const ContentSection = (
     models: SongSection[],
@@ -17,7 +18,10 @@ export const ContentSection = (
     const playerRef = useRef<HTMLVideoElement>(null);
     const { muted } = useContext(Store);
     const [currentTime, setCurrentTime] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isCurrentlyPlaying, setIsCurrentlyPlaying] = useState(false);
+    const isMediumSize = useMediaQuery('(min-width: 768px)');
+    const isSmallSize = useMediaQuery('(max-width: 767px)');
+    const {isPlaying: isFinishedIntro} = useContext(Store);
 
     const model = models.at(idx)
 
@@ -32,19 +36,30 @@ export const ContentSection = (
     }
 
     useEffect(() => {
-        if (!isPlaying || !model?.subtitles || !playerRef.current) return;
+        if (!playerRef.current) return;
+
+        if (isFinishedIntro && !isHidden) {
+            playerRef.current.play();
+        } else if (isHidden) {
+            playerRef.current.pause();
+            playerRef.current.currentTime = 0;
+        }
+    }, [isFinishedIntro, isHidden])
+
+    useEffect(() => {
+        if (!isCurrentlyPlaying || !model?.subtitles || !playerRef.current) return;
         const player = playerRef.current;
-        const fn = throttle(onTimeChange, 500);
+        const fn = throttle(onTimeChange, 100);
 
         player.addEventListener('timeupdate', fn);
         return () => player?.removeEventListener('timeupdate', fn);
-    }, [playerRef, isPlaying])
+    }, [playerRef, isCurrentlyPlaying])
 
     useEffect(() => {
         if (!playerRef.current) return;
         const player = playerRef.current;
-        const setPlaying = () => setIsPlaying(true);
-        const setPaused = () => setIsPlaying(false);
+        const setPlaying = () => setIsCurrentlyPlaying(true);
+        const setPaused = () => setIsCurrentlyPlaying(false);
 
 
         player.addEventListener("playing", setPlaying);
@@ -59,28 +74,26 @@ export const ContentSection = (
         }
     }, [playerRef])
 
-    useEffect(() => {
-        if (!playerRef.current) return;
-
-        if (!isHidden) {
-            playerRef.current.play();
-        } else {
-            playerRef.current.pause();
-            playerRef.current.currentTime = 0;
-        }
-    }, [isHidden])
-
     const renderRunningLyrics = () => {
         if (!model?.subtitles) return;
 
         const currentLyric = model?.subtitles?.find(sub => isWithinTimestamps(sub.startTime, currentTime, sub.endTime));
         const lyrics = document.getElementById('lyrics');
         if (!lyrics) return;
+
+        let fontSize = 1.4;
+        if (isMediumSize) {
+            fontSize = 1.2;
+        } else if (isSmallSize) {
+            fontSize = 1;
+        }
         return ReactDOM.createPortal(
             // Any valid React child: JSX, strings, arrays, etc.
             (
                 <div style={{ fontSize: '1.4em' }}>
-                    <div>{currentLyric?.text}</div>
+                    <div style={{
+                        fontSize: fontSize + 'rem',
+                    }}>{currentLyric?.text}</div>
                 </div>
             ),
             // A DOM element
@@ -96,8 +109,8 @@ export const ContentSection = (
         {
             model.videoUrl
                 ? <video
-                    autoPlay={!isHidden}
                     muted={isHidden || muted ? true : undefined}
+                    autoPlay={false}
                     className="content-image"
                     onClick={() => onClick?.(model)}
                     ref={playerRef}
@@ -112,7 +125,7 @@ export const ContentSection = (
                     className="content-image"
                 />
         }
-        {isPlaying && renderRunningLyrics()}
+        {isCurrentlyPlaying && renderRunningLyrics()}
     </React.Fragment>
 }
 
