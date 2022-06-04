@@ -11,9 +11,7 @@ import {BrowserRouter} from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter basename={'/hadar-final-project-website'}>
-          <Intro>
-              <App />
-          </Intro>
+          <App />
       </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

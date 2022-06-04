@@ -16,10 +16,10 @@ export interface MainContentProps {
     models: SongSection[];
     selectedIdx?: number;
     onClick?: (section: SongSection) => void;
-
+    onPlayNextSection?: () => void;
 }
 
-export const MainContent: FunctionComponent<MainContentProps> = ({models, onClick, selectedIdx}) => {
+export const MainContent: FunctionComponent<MainContentProps> = ({models, onClick, selectedIdx, onPlayNextSection}) => {
 
     const itemRefs: MutableRefObject<HTMLDivElement[]> = useRef([] as HTMLDivElement[]);
     const startRef: MutableRefObject<HTMLDivElement | null> = useRef(null as HTMLDivElement | null);
@@ -28,17 +28,15 @@ export const MainContent: FunctionComponent<MainContentProps> = ({models, onClic
     const [canScroll, setCanScroll] = useState(false);
     const [prevSelectedIdx, setPrevSelectedIdx] = useState(0);
 
-
     useEffect(() => {
         if (selectedIdx === null || selectedIdx === undefined) return;
-        itemRefs.current.at(selectedIdx!!)?.scrollIntoView({behavior: "smooth"});
 
         setPrevSelectedIdx(selectedIdx!!);
     }, [selectedIdx])
 
     return <div id="scrollArea" style={{height: '100%', width: '100%', overflow: canScroll ? 'auto' : 'hidden'}}>
         { models.map((model, idx) =>
-            ContentSection(models, idx, idx, idx !== selectedIdx,(element) => itemRefs.current[idx] = element as HTMLDivElement, onClick)
+            ContentSection(models, idx, idx, idx !== selectedIdx,(element) => itemRefs.current[idx] = element as HTMLDivElement, onClick, onPlayNextSection)
         ) }
     </div>
 }

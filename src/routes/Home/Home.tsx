@@ -46,7 +46,6 @@ export const Home = (props: IVideoContentProps) => {
                 size={circleSize}
                 models={songSections}
                 onSelect={(selection, sectionIdx) => {
-                    console.log(selection, sectionIdx);
                     setSelectedSection({
                         section: selection,
                         sectionIdx
@@ -57,6 +56,15 @@ export const Home = (props: IVideoContentProps) => {
                     models={songSections}
                     onClick={(station) => setMuted(muted => !muted)}
                     selectedIdx={selectedSection?.sectionIdx}
+                    onPlayNextSection={() => setSelectedSection(section => {
+                        if (!section) return null;
+
+                        const nextSectionIdx = (section.sectionIdx + 1) % songSections.length;
+                        return {
+                            section: songSections[nextSectionIdx],
+                            sectionIdx: nextSectionIdx
+                        }
+                    })}
                 />
                 <div className={"mute"}>{muted ? <VolumeOffIcon/> : <VolumeUpIcon/>}</div>
             </CircleCrop>

@@ -35,7 +35,6 @@ export const About = () => {
 
     const size = isSmallerCircle ? 200 : 300;
     const formSpacing = isSmallerCircle ? 2 : 5;
-    console.log(minWindowSize);
 
     return <span className="about">
         <div className={"about-container " + (isSmallerCircle ? 'smaller' : '')}>
@@ -45,7 +44,7 @@ export const About = () => {
                 <img src={CloseAboutIcon} className="icon" alt={'closing-icon'}/>
             </div>
             <LanguageSelector language={language} onClick={setLanguage}/>
-            {paragraphs.map((paragraph, idx) => <p style={{margin: 1}} key={idx} className={'description'}>{paragraph}</p> )}
+            {paragraphs.map((paragraph, idx) => <p style={{margin: 1, direction: language === Language.ENGLISH ? 'ltr' : 'rtl'}} key={idx} className={'description'}>{paragraph}</p> )}
             <div className="spacer"/>
         </div>
         <AboutForm

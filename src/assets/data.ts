@@ -5,12 +5,19 @@ import onTheEdgeImage from './images/on-the-edge.png';
 import lookThroughWindowImage from './images/look-through-window.png';
 import goingToCliffImage from './images/going-to-cliff.png';
 import eyeImage from './images/eye.png';
-
 import raw from 'raw.macro';
-import testVideo from './test/test.mp4';
 import SrtParser from 'srt-parser-2';
+import testVideo from './test/test.mp4';
+
 const parser = new SrtParser();
 
+const Embraced = raw('./subtitles/embraced.srt');
+const Foes = raw('./subtitles/foes.srt');
+const Gerush = raw('./subtitles/gerush.srt');
+const Marooned = raw('./subtitles/marooned.srt');
+const Outcast = raw('./subtitles/outcast.srt');
+const Rain = raw('./subtitles/rain.srt');
+const Skin = raw('./subtitles/skin.srt');
 
 export const songSections: SongSection[] = [
     {
@@ -23,7 +30,8 @@ export const songSections: SongSection[] = [
             'hold me,embrace me\n' +
             'now that i’m sinking',
         title: '1.embraced',
-        videoUrl: 'https://drive.google.com/uc?id=1i52EEsufYHdrjbUsO3MscwddBJhTsTgO'
+        videoUrl: 'https://drive.google.com/uc?id=1i52EEsufYHdrjbUsO3MscwddBJhTsTgO',
+        subtitles: parser.fromSrt(Embraced)
     },
     {
         id: 1,
@@ -34,7 +42,8 @@ export const songSections: SongSection[] = [
             'My clear mind has forsaken me\n' +
             'My eyes are deluding me',
         title: '2.skin',
-        videoUrl: 'https://drive.google.com/uc?id=1VvUuLepUpAyXZWcFUjPxKAA79qWQt_6C'
+        videoUrl: 'https://drive.google.com/uc?id=1VvUuLepUpAyXZWcFUjPxKAA79qWQt_6C',
+        subtitles: parser.fromSrt(Skin)
     },
     {
         id: 2,
@@ -51,7 +60,8 @@ export const songSections: SongSection[] = [
             'between This World\n' +
             'and the World to Come',
         title: '3.rain',
-        videoUrl: 'https://drive.google.com/uc?id=1XkGOUnBW5X65_jtu-j95ws1_e4qseFgp'
+        videoUrl: 'https://drive.google.com/uc?id=1XkGOUnBW5X65_jtu-j95ws1_e4qseFgp',
+        subtitles: parser.fromSrt(Rain)
     },
     {
         id: 3,
@@ -62,7 +72,8 @@ export const songSections: SongSection[] = [
             'Marooned in the ocean \n' +
             'Left to wither in the garden\n',
         title: '4.marooned',
-        videoUrl: 'https://drive.google.com/uc?id=1s_s8BJg3LH_k3vdeBZSthKPfppGQRMjZ'
+        videoUrl: 'https://drive.google.com/uc?id=1s_s8BJg3LH_k3vdeBZSthKPfppGQRMjZ',
+        subtitles: parser.fromSrt(Marooned)
     },
     {
         id: 4,
@@ -70,7 +81,7 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'Instrumental',
         title: '5.possessed',
-        videoUrl: 'https://drive.google.com/uc?id=1COPL2r35PfMYXaqOABKp7jpeuUkjumUQ'
+        videoUrl: 'https://drive.google.com/uc?id=1COPL2r35PfMYXaqOABKp7jpeuUkjumUQ',
     },
     {
         id: 5,
@@ -85,7 +96,8 @@ export const songSections: SongSection[] = [
             'Where are you taking me?\n' +
             'I beg to turn around',
         title: '6.foes',
-        videoUrl: 'https://drive.google.com/uc?id=1KPaJMBHtnptJtS_-AE_ap3t7IsTM4lKs'
+        videoUrl: 'https://drive.google.com/uc?id=1KPaJMBHtnptJtS_-AE_ap3t7IsTM4lKs',
+        subtitles: parser.fromSrt(Foes)
 },
     {
         id: 6,
@@ -104,7 +116,8 @@ export const songSections: SongSection[] = [
             'There is no need for finesse\n' +
             'We don’t mind her pain',
         title: '7.outcast',
-        videoUrl: 'https://drive.google.com/uc?id=10H1nzwcuXfEQlGtwHDmwMqlO54Qshd20'
+        videoUrl: 'https://drive.google.com/uc?id=10H1nzwcuXfEQlGtwHDmwMqlO54Qshd20',
+        subtitles: parser.fromSrt(Outcast)
     },
     {
         id: 7,
@@ -112,7 +125,8 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'צא צא צא',
         title: '8.gerush',
-        videoUrl: 'https://drive.google.com/uc?id=1efJJ-SbJ7_Y0PyXv0MoKtsr_Hi-2K-c3'
+        videoUrl: 'https://drive.google.com/uc?id=1efJJ-SbJ7_Y0PyXv0MoKtsr_Hi-2K-c3',
+        subtitles: parser.fromSrt(Gerush)
     },
     {
         id: 8,
@@ -120,7 +134,8 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'Instrumental',
         title: '9.void',
-        videoUrl: 'https://drive.google.com/uc?id=1aGRfld3Woa3zdwU9DujExm4S9iZ-7K8u'
+        videoUrl: 'https://drive.google.com/uc?id=1aGRfld3Woa3zdwU9DujExm4S9iZ-7K8u',
+
     },
     // {
     //     id: 9,

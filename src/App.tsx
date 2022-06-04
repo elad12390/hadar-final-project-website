@@ -5,6 +5,7 @@ import {Home} from "./routes/Home/Home";
 import {About} from "./routes/About/About";
 import LogoNight from './assets/icons/logo-night.svg';
 import LogoDay from './assets/icons/logo-day.svg';
+import {Intro} from "./Intro/Intro";
 
 export const Store = React.createContext<{
     muted: boolean;
@@ -20,7 +21,7 @@ export const Store = React.createContext<{
 
 const App = () => {
 
-    const [muted, setMuted] = useState(true);
+    const [muted, setMuted] = useState(false);
     const location = useLocation();
     const [isNightMode, setIsNightMode] = useState(false);
     useEffect(() => {
@@ -46,14 +47,14 @@ const App = () => {
                 transition: isNightMode ? 'background .4s' : 'background .2s',
                 transitionDelay: '.1s'
             }} className='flex-center-contents'>
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route
-                        path="*"
-                        element={<Navigate to="/" replace />}
-                    />
-                </Routes>
+                    <Routes>
+                        <Route path="/" element={<Intro><Home/></Intro>}/>
+                        <Route path="/about" element={<About/>}/>
+                        <Route
+                            path="*"
+                            element={<Navigate to="/" replace />}
+                        />
+                    </Routes>
             </div>
             <Link hidden={location.pathname.includes('about')} to={'/about'} style={{color: 'black'}}><h2 style={{
                 position: 'fixed',

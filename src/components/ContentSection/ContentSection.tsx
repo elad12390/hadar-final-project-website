@@ -11,7 +11,8 @@ export const ContentSection = (
     key: number,
     isHidden: boolean,
     ref: (element: HTMLElement | null) => void,
-    onClick?: (section: SongSection) => void
+    onClick?: (section: SongSection) => void,
+    onPlayNextSection?: () => void
 ) => {
     const playerRef = useRef<HTMLVideoElement>(null);
     const { muted } = useContext(Store);
@@ -26,12 +27,17 @@ export const ContentSection = (
         setCurrentTime(() => player.currentTime);
     }
 
+    const onVideoEnd = () => {
+        onPlayNextSection?.();
+    }
+
     useEffect(() => {
         if (!isPlaying || !model?.subtitles || !playerRef.current) return;
         const player = playerRef.current;
+        const fn = throttle(onTimeChange, 500);
 
-        player.addEventListener('timeupdate', throttle(onTimeChange, 1000));
-        return () => player?.removeEventListener('timeupdate', throttle(onTimeChange, 1000));
+        player.addEventListener('timeupdate', fn);
+        return () => player?.removeEventListener('timeupdate', fn);
     }, [playerRef, isPlaying])
 
     useEffect(() => {
@@ -43,10 +49,13 @@ export const ContentSection = (
 
         player.addEventListener("playing", setPlaying);
         player.addEventListener('pause', setPaused);
+        player.addEventListener('ended', onVideoEnd);
+
 
         return () => {
             player.removeEventListener("playing", setPlaying);
             player.removeEventListener('pause', setPaused);
+            player.removeEventListener('ended', onVideoEnd);
         }
     }, [playerRef])
 
@@ -66,12 +75,11 @@ export const ContentSection = (
 
         const currentLyric = model?.subtitles?.find(sub => isWithinTimestamps(sub.startTime, currentTime, sub.endTime));
         const lyrics = document.getElementById('lyrics');
-        console.log(lyrics);
         if (!lyrics) return;
         return ReactDOM.createPortal(
             // Any valid React child: JSX, strings, arrays, etc.
             (
-                <div style={{ fontSize: '1.5em' }}>
+                <div style={{ fontSize: '1.4em' }}>
                     <div>{currentLyric?.text}</div>
                 </div>
             ),
@@ -89,7 +97,6 @@ export const ContentSection = (
             model.videoUrl
                 ? <video
                     autoPlay={!isHidden}
-                    loop
                     muted={isHidden || muted ? true : undefined}
                     className="content-image"
                     onClick={() => onClick?.(model)}
