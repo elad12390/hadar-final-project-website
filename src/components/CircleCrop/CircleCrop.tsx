@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect, useMemo, useState} from "react";
+import React, {FunctionComponent, useEffect, useState} from "react";
 import './CircleCrop.scss'
 import {SongSection} from "../../models/general-models";
 import {useMemoWithArg} from "../../utils/hooks/useMemoWithArg";
@@ -13,7 +13,7 @@ export interface CircleCropProps {
 }
 
 export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
-    const size = useWindowSize();
+    useWindowSize();
     const letterSpacing = props.size < 500 ? 2 : 4;
     const circleCircumference = 360;
     const letterDistanceFromCircle = 60;
@@ -48,7 +48,7 @@ export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
         const newDeg = -1 * ((degPerChar * (selected.offset + (selected.title.length / 2))) + 12);
 
         setRotation(closestAngle(prevRotation, newDeg));
-    },[degPerChar, textButtons, props.selectedIdx])
+    },[degPerChar, textButtons, props.selectedIdx, rotation, prevRotation])
 
     return (
         <>

@@ -1,9 +1,8 @@
-import React, {Dispatch} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Intro} from "./Intro/Intro";
 import {BrowserRouter} from "react-router-dom";
 
 

@@ -1,8 +1,7 @@
-import {FunctionComponent, ReactElement, useEffect, useMemo, useState} from "react";
-import {animated, useSpring, useTransition} from 'react-spring';
+import {useEffect, useMemo, useState} from "react";
 import './Intro.scss';
 import {useWindowSize} from "../utils/hooks/useWindowSize";
-
+import intro from '../assets/images/intro.png';
 
 const initialDistance = 300;
 const animationDelay = 200;
@@ -13,13 +12,12 @@ export interface IntroProps extends React.PropsWithChildren<any> {
 
 export const Intro = ({children, onFinished}: IntroProps) => {
     const [isFinished, setIsFinished] = useState(false);
-    const [animationState, setAnimationState] = useState(0);
     const size = useWindowSize();
     const minSize = useMemo(() => size.width && size.height && Math.min(size.width, size.height), [size]);
 
     const [animatedSize, setAnimatedSize] = useState(1);
     const [mainContentSize, setMainContentSize] = useState(0);
-    const divSize = useMemo(() => minSize && (minSize - initialDistance), [minSize, animatedSize]);
+    const divSize = useMemo(() => minSize && (minSize - initialDistance), [minSize]);
 
 
     useEffect(() => {
@@ -38,7 +36,7 @@ export const Intro = ({children, onFinished}: IntroProps) => {
         document.addEventListener('mouseup', onClick);
 
         return () => document.removeEventListener('mouseup', onClick);
-    }, [])
+    }, [isFinished, onFinished])
 
 
 
@@ -57,7 +55,8 @@ export const Intro = ({children, onFinished}: IntroProps) => {
                 position: 'absolute',
                 width: divSize,
                 height: divSize,
-                backgroundColor: "black",
+                backgroundImage: `url(${intro})`,
+                backgroundSize: 'auto 100%',
                 left: '50%',
                 top: '50%',
                 transform: `translate(-50%, -50%) scale(${animatedSize})`,
@@ -65,7 +64,7 @@ export const Intro = ({children, onFinished}: IntroProps) => {
                 textAlign: 'center',
                 lineHeight: divSize + 'px',
                 color: "white",
-                fontSize: divSize && (divSize / 10 + 'px'),
+                fontSize: divSize && (divSize / 20 + 'px'),
                 transition: `transform ${animationDelay / 1000}s ease-in-out`,
                 cursor: 'pointer',
                 userSelect: 'none',

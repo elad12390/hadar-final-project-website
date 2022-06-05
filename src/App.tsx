@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import './App.css';
-import {Link, Navigate, Route, Router, Routes, useLocation} from "react-router-dom";
+import {Link, Navigate, Route, Routes, useLocation} from "react-router-dom";
 import {Home} from "./routes/Home/Home";
 import {About} from "./routes/About/About";
 import LogoNight from './assets/icons/logo-night.svg';
@@ -41,7 +41,7 @@ const App = () => {
                 bottom: `90%`,
                 textDecoration: 'none',
                 color: 'black'
-            }} onClick={() => setIsNightMode(false)}><img src={isNightMode ? LogoNight : LogoDay}/></Link>
+            }} onClick={() => setIsNightMode(false)}><img src={isNightMode ? LogoNight : LogoDay} alt={''}/></Link>
             <div style={{
                 width: '100%',
                 height: '100%',

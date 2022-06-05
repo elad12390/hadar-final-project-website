@@ -32,10 +32,6 @@ export const Home = () => {
         window.addEventListener("wheel", e => e.preventDefault(), { passive:false })
     }, [])
 
-    useMemo(() => {
-        cacheImages(songSections.map(section => section.image));
-    }, [])
-
     const [largeTextBorderBottom, setLargeTextBorderBottom] = useState(0);
 
     useEffect(() => {

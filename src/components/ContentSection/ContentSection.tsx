@@ -1,8 +1,8 @@
-import React, {useContext, useEffect, useRef, useState} from "react";
+import React, {useCallback, useContext, useEffect, useRef, useState} from "react";
 import {SongSection} from "../../models/general-models";
 import './ContentSection.scss';
 import {Store} from "../../App";
-import {convertTimestampToSeconds, isWithinTimestamps, throttle} from "../../utils/fns";
+import {isWithinTimestamps, throttle} from "../../utils/fns";
 import ReactDOM from "react-dom";
 import {useMediaQuery} from "../../utils/hooks/useMediaQuery";
 
@@ -31,9 +31,9 @@ export const ContentSection = (
         setCurrentTime(() => player.currentTime);
     }
 
-    const onVideoEnd = () => {
+    const onVideoEnd = useCallback(() => {
         onPlayNextSection?.();
-    }
+    }, [onPlayNextSection])
 
     useEffect(() => {
         if (!playerRef.current) return;
@@ -53,7 +53,7 @@ export const ContentSection = (
 
         player.addEventListener('timeupdate', fn);
         return () => player?.removeEventListener('timeupdate', fn);
-    }, [playerRef, isCurrentlyPlaying])
+    }, [playerRef, isCurrentlyPlaying, model?.subtitles])
 
     useEffect(() => {
         if (!playerRef.current) return;
@@ -72,7 +72,7 @@ export const ContentSection = (
             player.removeEventListener('pause', setPaused);
             player.removeEventListener('ended', onVideoEnd);
         }
-    }, [playerRef])
+    }, [onVideoEnd, playerRef])
 
     const renderRunningLyrics = () => {
         if (!model?.subtitles) return;
@@ -104,23 +104,15 @@ export const ContentSection = (
 
     return <React.Fragment key={`ContentImg-${idx}`}>
         {
-            model.videoUrl
-                ? <video
-                    muted={isHidden || muted ? true : undefined}
-                    autoPlay={false}
-                    className="content-image"
-                    onClick={() => onClick?.(model)}
-                    ref={playerRef}
-                    src={model.videoUrl}
-                    style={{display: isHidden ? 'none' : 'block'}}
-                />
-                : <img
-                    src={model.image}
-                    onClick={() => onClick?.(model)}
-                    key={`ContentImg-${idx}`}
-                    ref={ref}
-                    className="content-image"
-                />
+            <video
+                muted={isHidden || muted ? true : undefined}
+                autoPlay={false}
+                className="content-image"
+                onClick={() => onClick?.(model)}
+                ref={playerRef}
+                src={model.videoUrl}
+                style={{display: isHidden ? 'none' : 'block'}}
+            />
         }
         {isCurrentlyPlaying && renderRunningLyrics()}
     </React.Fragment>

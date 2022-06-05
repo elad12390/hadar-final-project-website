@@ -1,8 +1,6 @@
 import React, {
-    ComponentProps, Fragment,
     FunctionComponent,
     MutableRefObject,
-    PropsWithChildren,
     useEffect,
     useRef,
     useState
@@ -10,7 +8,6 @@ import React, {
 import './MainContent.css'
 import {SongSection} from "../../models/general-models";
 import {ContentSection} from "../ContentSection/ContentSection";
-import {getEnvironmentData} from "worker_threads";
 
 export interface MainContentProps {
     models: SongSection[];
@@ -22,11 +19,9 @@ export interface MainContentProps {
 export const MainContent: FunctionComponent<MainContentProps> = ({models, onClick, selectedIdx, onPlayNextSection}) => {
 
     const itemRefs: MutableRefObject<HTMLDivElement[]> = useRef([] as HTMLDivElement[]);
-    const startRef: MutableRefObject<HTMLDivElement | null> = useRef(null as HTMLDivElement | null);
-    const endRef: MutableRefObject<HTMLDivElement | null> = useRef(null as HTMLDivElement | null);
 
-    const [canScroll, setCanScroll] = useState(false);
-    const [prevSelectedIdx, setPrevSelectedIdx] = useState(0);
+    const [canScroll] = useState(false);
+    const [, setPrevSelectedIdx] = useState(0);
 
     useEffect(() => {
         if (selectedIdx === null || selectedIdx === undefined) return;
