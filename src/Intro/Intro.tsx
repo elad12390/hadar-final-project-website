@@ -69,7 +69,7 @@ export const Intro = ({children, onFinished}: IntroProps) => {
                 cursor: 'pointer',
                 userSelect: 'none',
             }}>
-                To Start Click Here
+                Start
             </div>
         </div>}
     </>
