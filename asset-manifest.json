@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hadar-final-project-website/static/css/main.3703370f.css",
-    "main.js": "/hadar-final-project-website/static/js/main.5a69542d.js",
+    "main.css": "/hadar-final-project-website/static/css/main.56d8f07c.css",
+    "main.js": "/hadar-final-project-website/static/js/main.56ef1a23.js",
     "static/js/787.0fe84981.chunk.js": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js",
     "static/media/intro.png": "/hadar-final-project-website/static/media/intro.128fa82b2f23edd0c7d4.png",
     "static/media/subset-NarkisimMF-Bold.eot": "/hadar-final-project-website/static/media/subset-NarkisimMF-Bold.49193e102e9649880516.eot",
@@ -25,12 +25,12 @@
     "index.html": "/hadar-final-project-website/index.html",
     "static/media/icon-closing-about.svg": "/hadar-final-project-website/static/media/icon-closing-about.5c0cfd1f004e51ba5e55170ff41ca373.svg",
     "static/media/icon-opening-about.svg": "/hadar-final-project-website/static/media/icon-opening-about.89474613e926a3ef58ffbabcf25feaf0.svg",
-    "main.3703370f.css.map": "/hadar-final-project-website/static/css/main.3703370f.css.map",
-    "main.5a69542d.js.map": "/hadar-final-project-website/static/js/main.5a69542d.js.map",
+    "main.56d8f07c.css.map": "/hadar-final-project-website/static/css/main.56d8f07c.css.map",
+    "main.56ef1a23.js.map": "/hadar-final-project-website/static/js/main.56ef1a23.js.map",
     "787.0fe84981.chunk.js.map": "/hadar-final-project-website/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3703370f.css",
-    "static/js/main.5a69542d.js"
+    "static/css/main.56d8f07c.css",
+    "static/js/main.56ef1a23.js"
   ]
 }
