@@ -31,7 +31,7 @@ export const About = () => {
 
     const minWindowSize = useMemo(() => Math.min(windowSize.width as number, windowSize.height as number), [windowSize.width, windowSize.height]);
 
-    const isSmallerCircle = minWindowSize <  1000;
+    const isSmallerCircle = minWindowSize <  900 || (windowSize.width ?? 0) < 1400;
 
     const size = isSmallerCircle ? 200 : 300;
     const formSpacing = isSmallerCircle ? 2 : 5;

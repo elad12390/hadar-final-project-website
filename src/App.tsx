@@ -61,7 +61,9 @@ const App = () => {
                             onFinished={() => {
                                 setIsIntroFinished(true);
                                 setMuted(false);
-                                setIsPlaying(true);
+                                setTimeout(() => {
+                                    setIsPlaying(true);
+                                }, 300)
                             }}>
                             <Home/>
                         </Intro>
