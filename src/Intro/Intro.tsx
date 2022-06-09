@@ -10,13 +10,12 @@ export interface IntroProps extends React.PropsWithChildren<any> {
     onFinished: () => void;
 }
 
-export const Intro = ({children, onFinished}: IntroProps) => {
-    const [isFinished, setIsFinished] = useState(false);
+export const Intro = ({children, onFinished, isFinished}: IntroProps) => {
     const size = useWindowSize();
     const minSize = useMemo(() => size.width && size.height && Math.min(size.width, size.height), [size]);
 
     const [animatedSize, setAnimatedSize] = useState(1);
-    const [mainContentSize, setMainContentSize] = useState(0);
+    const [mainContentSize, setMainContentSize] = useState(isFinished ? 1 : 0);
     const divSize = useMemo(() => minSize && (minSize - initialDistance), [minSize]);
 
 
@@ -26,7 +25,6 @@ export const Intro = ({children, onFinished}: IntroProps) => {
             setAnimatedSize(0);
             console.log('click');
             setTimeout(() => {
-                setIsFinished(true);
                 setMainContentSize(1);
                 onFinished?.();
                 document.removeEventListener('mouseup', onClick)

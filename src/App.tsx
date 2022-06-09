@@ -15,9 +15,11 @@ export const Store = React.createContext<{
     isPlaying: boolean;
 }>({
     muted: false,
-    setMuted: () => {},
+    setMuted: () => {
+    },
     isNightMode: false,
-    setIsNightMode: () => {},
+    setIsNightMode: () => {
+    },
     isPlaying: false
 })
 
@@ -27,6 +29,8 @@ const App = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const location = useLocation();
     const [isNightMode, setIsNightMode] = useState(false);
+    const [isIntroFinished, setIsIntroFinished] = useState(false);
+
     useEffect(() => {
         setIsNightMode(location.pathname.includes('about'));
     }, [location])
@@ -50,17 +54,24 @@ const App = () => {
                 transition: isNightMode ? 'background .4s' : 'background .2s',
                 transitionDelay: '.1s'
             }} className='flex-center-contents'>
-                    <Routes>
-                        <Route path="/" element={<Intro onFinished={() => {
-                            setMuted(false);
-                            setIsPlaying(true);
-                        }}><Home/></Intro>}/>
-                        <Route path="/about" element={<About/>}/>
-                        <Route
-                            path="*"
-                            element={<Navigate to="/" replace />}
-                        />
-                    </Routes>
+                <Routes>
+                    <Route path="/" element={
+                        <Intro
+                            isFinished={isIntroFinished}
+                            onFinished={() => {
+                                setIsIntroFinished(true);
+                                setMuted(false);
+                                setIsPlaying(true);
+                            }}>
+                            <Home/>
+                        </Intro>
+                    }/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route
+                        path="*"
+                        element={<Navigate to="/" replace/>}
+                    />
+                </Routes>
             </div>
             <Link hidden={location.pathname.includes('about')} to={'/about'} style={{color: 'black'}}><h2 style={{
                 position: 'fixed',
