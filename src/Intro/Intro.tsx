@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState} from "react";
 import './Intro.scss';
 import {useWindowSize} from "../utils/hooks/useWindowSize";
-import intro from '../assets/images/intro.png';
+import intro from '../assets/images/intro.gif';
 
 const initialDistance = 300;
 const animationDelay = 200;
