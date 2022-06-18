@@ -58,6 +58,7 @@ export const ContentSection = (
     useEffect(() => {
         if (!playerRef.current) return;
         const player = playerRef.current;
+        player.setAttribute('playsinline', '');
         const setPlaying = () => setIsCurrentlyPlaying(true);
         const setPaused = () => setIsCurrentlyPlaying(false);
 
