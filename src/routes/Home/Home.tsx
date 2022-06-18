@@ -9,9 +9,14 @@ import {SongSection} from "../../models/general-models";
 import {useAsyncEffect} from "../../utils/hooks/useAsyncEffect";
 import {cacheImages} from "../../utils/hooks/useCachedImages";
 import {Store} from "../../App";
+import {useIsDesktop} from "../../utils/hooks/useIsDesktop";
+import './Home.scss';
+import {MobileBottomNavigator} from "./MobileBottomNavigator/MobileBottomNavigator";
 
 export const Home = () => {
-    const SIZE_MULTIPLIER = .6
+    const SIZE_MULTIPLIER = .6;
+    const MOBILE_SIZE_MULTIPLIER = 1.2;
+    const isDesktop = useIsDesktop();
     const size = useWindowSize();
     const [circleSize, setCircleSize] = useState(0);
     const [selectedSection, setSelectedSection] = useState<{
@@ -25,7 +30,7 @@ export const Home = () => {
 
     useAsyncEffect(async () => {
         if (!size?.width || !size?.height) { return; }
-        setCircleSize(Math.min(size.width as number * .7, size.height as number)*SIZE_MULTIPLIER);
+        setCircleSize(Math.min(size.width as number * .7, size.height as number)*(isDesktop ? SIZE_MULTIPLIER : MOBILE_SIZE_MULTIPLIER));
     }, [size])
 
     useEffect(() => {
@@ -47,6 +52,7 @@ export const Home = () => {
     return <>
         <div className="image-container" style={{backgroundImage: `url(/${process.env.PUBLIC_URL}/images/background.png)`}}>
             <CircleCrop
+                hasButtons={isDesktop}
                 size={circleSize}
                 models={songSections}
                 onSelect={(selection, sectionIdx) => {
@@ -72,7 +78,24 @@ export const Home = () => {
                 />
                 <div className={"mute"}>{muted ? <VolumeOffIcon/> : <VolumeUpIcon/>}</div>
             </CircleCrop>
-            <div id={"lyrics"} style={{zIndex: 3, position: 'absolute', bottom: `${largeTextBorderBottom - 14}px`}}/>
+            <div id={"lyrics"} style={{
+                zIndex: 3,
+                position: 'absolute',
+                bottom: isDesktop ? `${largeTextBorderBottom - 14}px` : `${largeTextBorderBottom + 120}px`
+            }}/>
         </div>
+        {
+            !isDesktop &&
+            selectedSection?.section &&
+            <MobileBottomNavigator selectedSection={selectedSection} onChangeIdx={(newIdx: number) => {
+                setSelectedSection(section => {
+                    if (!section) return null;
+                    return {
+                        section: songSections[newIdx],
+                        sectionIdx: newIdx
+                    }
+                })
+            }} />
+        }
     </>
 }

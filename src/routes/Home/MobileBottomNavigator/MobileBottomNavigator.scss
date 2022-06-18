@@ -1,0 +1,32 @@
+
+
+.bottom-navigator {
+  $navigator-padding: 2rem;
+  $middle-button-font-size: 2rem;
+  $side-buttons-font-size: 1rem;
+  $line-height: calc(#{$middle-button-font-size} + 10px);
+
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - #{2*$navigator-padding});
+  padding: $navigator-padding;
+
+  .side-button {
+    line-height: $line-height;
+  }
+
+  .prev {
+    font-size: $side-buttons-font-size;
+  }
+
+  .current {
+    font-size: $middle-button-font-size;
+  }
+
+  .next {
+    font-size: $side-buttons-font-size;
+  }
+}

@@ -6,6 +6,7 @@ import {About} from "./routes/About/About";
 import LogoNight from './assets/icons/logo-night.svg';
 import LogoDay from './assets/icons/logo-day.svg';
 import {Intro} from "./Intro/Intro";
+import {useIsDesktop} from "./utils/hooks/useIsDesktop";
 
 export const Store = React.createContext<{
     muted: boolean;
@@ -24,7 +25,7 @@ export const Store = React.createContext<{
 })
 
 const App = () => {
-
+    const isDesktop = useIsDesktop();
     const [muted, setMuted] = useState(true);
     const [isPlaying, setIsPlaying] = useState(false);
     const location = useLocation();

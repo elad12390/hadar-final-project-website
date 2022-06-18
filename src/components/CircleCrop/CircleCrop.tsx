@@ -7,6 +7,7 @@ import {useWindowSize} from "../../utils/hooks/useWindowSize";
 
 export interface CircleCropProps {
     size: number;
+    hasButtons: boolean;
     models: SongSection[];
     selectedIdx?: number | null;
     onSelect?: (selection: SongSection, sectionIdx: number) => void;
@@ -52,20 +53,22 @@ export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
 
     return (
         <>
-            <div className="text-border" id="large-text-border"
+            {props.hasButtons && <>
+                <div className="text-border" id="large-text-border"
                  style={{
                      width: props.size + 150,
                      height: props.size + 150
                  }}
-            />
-            <div className="text-border"
-                 style={{
-                     width: props.size + 20,
-                     height: props.size + 20
-                 }}
-            />
+                />
+                <div className="text-border"
+                     style={{
+                         width: props.size + 20,
+                         height: props.size + 20
+                     }}
+                />
+            </>}
             <span className="circle-drop-shadow">
-                <span className="circle-text-wrapper" style={{
+                {props.hasButtons && <span className="circle-text-wrapper" style={{
                     width: props.size,
                     height: props.size,
                     transform: `rotate(${rotation}deg)`,
@@ -91,7 +94,7 @@ export const CircleCrop: FunctionComponent<CircleCropProps> = (props) => {
                             )}
                         </span>
                     )}
-                </span>
+                </span>}
                 <div className="CircleCrop" style={{height: props.size, width: props.size}}>
                     {props.children}
                 </div>

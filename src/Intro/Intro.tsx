@@ -2,8 +2,10 @@ import {useEffect, useMemo, useState} from "react";
 import './Intro.scss';
 import {useWindowSize} from "../utils/hooks/useWindowSize";
 import intro from '../assets/images/intro.gif';
+import {useIsDesktop} from "../utils/hooks/useIsDesktop";
 
 const initialDistance = 300;
+const initialMobileDistance = 20;
 const animationDelay = 200;
 
 export interface IntroProps extends React.PropsWithChildren<any> {
@@ -12,16 +14,24 @@ export interface IntroProps extends React.PropsWithChildren<any> {
 
 export const Intro = ({children, onFinished, isFinished}: IntroProps) => {
     const size = useWindowSize();
+    const isDesktop = useIsDesktop();
     const minSize = useMemo(() => size.width && size.height && Math.min(size.width, size.height), [size]);
 
     const [animatedSize, setAnimatedSize] = useState(1);
     const [mainContentSize, setMainContentSize] = useState(isFinished ? 1 : 0);
-    const divSize = useMemo(() => minSize && (minSize - initialDistance), [minSize]);
+    const divSize = useMemo(() => {
+        if (!minSize) { return; }
+        if (isDesktop) { return minSize - initialDistance; }
+        return minSize - initialMobileDistance;
+    }, [isDesktop, minSize]);
 
 
     useEffect(() => {
         const onClick = () => {
-            if (isFinished) { document.removeEventListener('mouseup', onClick); return; }
+            if (isFinished) {
+                document.removeEventListener('mouseup', onClick);
+                return;
+            }
             setAnimatedSize(0);
             console.log('click');
             setTimeout(() => {
@@ -35,7 +45,6 @@ export const Intro = ({children, onFinished, isFinished}: IntroProps) => {
 
         return () => document.removeEventListener('mouseup', onClick);
     }, [isFinished, onFinished])
-
 
 
     return <>
