@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9821ada6.css",
-    "main.js": "/static/js/main.121c2808.js",
+    "main.js": "/static/js/main.22de47ed.js",
     "static/js/787.0fe84981.chunk.js": "/static/js/787.0fe84981.chunk.js",
     "static/media/intro.gif": "/static/media/intro.9e583e8bbc2ce7992a1d.gif",
     "static/media/subset-NarkisimMF-Bold.eot": "/static/media/subset-NarkisimMF-Bold.49193e102e9649880516.eot",
@@ -26,11 +26,11 @@
     "static/media/icon-opening-about.svg": "/static/media/icon-opening-about.89474613e926a3ef58ffbabcf25feaf0.svg",
     "index.html": "/index.html",
     "main.9821ada6.css.map": "/static/css/main.9821ada6.css.map",
-    "main.121c2808.js.map": "/static/js/main.121c2808.js.map",
+    "main.22de47ed.js.map": "/static/js/main.22de47ed.js.map",
     "787.0fe84981.chunk.js.map": "/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9821ada6.css",
-    "static/js/main.121c2808.js"
+    "static/js/main.22de47ed.js"
   ]
 }
