@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d0d586c1.css",
-    "main.js": "/static/js/main.fe88545b.js",
+    "main.css": "/static/css/main.9821ada6.css",
+    "main.js": "/static/js/main.990cdef5.js",
     "static/js/787.0fe84981.chunk.js": "/static/js/787.0fe84981.chunk.js",
     "static/media/intro.gif": "/static/media/intro.9e583e8bbc2ce7992a1d.gif",
     "static/media/subset-NarkisimMF-Bold.eot": "/static/media/subset-NarkisimMF-Bold.49193e102e9649880516.eot",
@@ -25,12 +25,12 @@
     "static/media/icon-closing-about.svg": "/static/media/icon-closing-about.5c0cfd1f004e51ba5e55170ff41ca373.svg",
     "static/media/icon-opening-about.svg": "/static/media/icon-opening-about.89474613e926a3ef58ffbabcf25feaf0.svg",
     "index.html": "/index.html",
-    "main.d0d586c1.css.map": "/static/css/main.d0d586c1.css.map",
-    "main.fe88545b.js.map": "/static/js/main.fe88545b.js.map",
+    "main.9821ada6.css.map": "/static/css/main.9821ada6.css.map",
+    "main.990cdef5.js.map": "/static/js/main.990cdef5.js.map",
     "787.0fe84981.chunk.js.map": "/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0d586c1.css",
-    "static/js/main.fe88545b.js"
+    "static/css/main.9821ada6.css",
+    "static/js/main.990cdef5.js"
   ]
 }
