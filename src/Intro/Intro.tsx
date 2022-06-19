@@ -30,7 +30,8 @@ export const Intro = ({children, onFinished, isFinished}: IntroProps) => {
         const onClick = () => {
             if (isFinished) {
                 document.removeEventListener('mouseup', onClick);
-                return;
+                console.log('finished?')
+                return true;
             }
             setAnimatedSize(0);
             console.log('click');

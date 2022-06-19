@@ -81,7 +81,11 @@ export const Home = () => {
             <div id={"lyrics"} style={{
                 zIndex: 3,
                 position: 'absolute',
-                bottom: isDesktop ? `${largeTextBorderBottom - 14}px` : `${largeTextBorderBottom + 120}px`
+                left: 0,
+                width: '100%',
+                textAlign: 'center',
+                bottom: isDesktop ? `${largeTextBorderBottom - 14}px` : `${largeTextBorderBottom + 120}px`,
+                ...(isDesktop ? {} : {fontSize: '1rem'})
             }}/>
         </div>
         {

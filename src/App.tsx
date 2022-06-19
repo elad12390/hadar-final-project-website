@@ -53,7 +53,8 @@ const App = () => {
                 background: isNightMode ? 'black' : '#fbfaf8',
                 color: isNightMode ? '#fbfaf8' : 'black',
                 transition: isNightMode ? 'background .4s' : 'background .2s',
-                transitionDelay: '.1s'
+                transitionDelay: '.1s',
+                overflowY: 'auto'
             }} className='flex-center-contents'>
                 <Routes>
                     <Route path="/" element={
