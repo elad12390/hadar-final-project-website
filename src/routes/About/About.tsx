@@ -4,6 +4,8 @@ import OpenAboutIcon from '../../assets/icons/icon-opening-about.svg';
 import {Language} from "../../components/LanguageSelector/LanguageSelector";
 import {useEffect, useMemo} from "react";
 import {useWindowSize} from "../../utils/hooks/useWindowSize";
+import FormImg from '../../assets/images/form-img.png';
+import {useIsDesktop} from "../../utils/hooks/useIsDesktop";
 
 export const About = () => {
     const title = `I Am the vocalist of Li’ed - \nA Progressive Symphonic Metal band.
@@ -27,16 +29,16 @@ A lonly girl commits suicide. Due to that, she's banned from entering the afterl
         return () => document.removeEventListener('wheel', listener)
     }, [])
 
+    const isDesktop = useIsDesktop();
+
     const windowSize = useWindowSize();
 
     const minWindowSize = useMemo(() => Math.min(windowSize.width as number, windowSize.height as number), [windowSize.width, windowSize.height]);
 
-    const isSmallerCircle = minWindowSize <  900 || (windowSize.width ?? 0) < 1400;
+    const isSmallerCircle = minWindowSize <  900 || (windowSize.width ?? 0) < 1700;
 
-    const size = isSmallerCircle ? 200 : 300;
-    const formSpacing = isSmallerCircle ? 2 : 5;
-
-    return <div className="about">
+    const size = isDesktop ? 500 : 300;
+    return <div className={`about ${isDesktop ? '' : 'mobile'}`}>
         <div className={"about-container " + (isSmallerCircle ? 'smaller' : '')}>
             <div className={'title-container'}>
                 <div className="title">
@@ -55,12 +57,12 @@ A lonly girl commits suicide. Due to that, she's banned from entering the afterl
             </div>
             <div className={'form-and-photo'}>
                 <AboutForm
-                    style={{ left: `${formSpacing}%` }}
                     language={Language.ENGLISH}
                     className="form"
                     size={size}
                     isSmaller={isSmallerCircle}
                 />
+                <img src={FormImg} className={'photo'}/>
             </div>
 
             <div className="spacer"/>

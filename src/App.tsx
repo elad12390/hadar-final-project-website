@@ -41,12 +41,21 @@ const App = () => {
     return (
         <Store.Provider value={{muted, setMuted, isNightMode, setIsNightMode, isPlaying}}>
             <Link to={'/'} style={{
+                zIndex: 1,
                 position: 'fixed',
                 left: '5%',
                 bottom: `90%`,
                 textDecoration: 'none',
                 color: 'black'
             }} onClick={() => setIsNightMode(false)}><img src={isNightMode ? LogoNight : LogoDay} alt={''}/></Link>
+            {isNightMode && <div style={{
+                background: 'black',
+                position: 'absolute',
+                width: '100%',
+                height: '12%',
+                top: 0,
+                zIndex: 0
+            }}></div>}
             <div style={{
                 width: '100%',
                 height: '100%',
