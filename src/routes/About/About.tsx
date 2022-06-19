@@ -2,7 +2,7 @@ import './About.scss';
 import {AboutForm} from "../../components/AboutForm/AboutForm";
 import OpenAboutIcon from '../../assets/icons/icon-opening-about.svg';
 import {Language} from "../../components/LanguageSelector/LanguageSelector";
-import {useMemo} from "react";
+import {useEffect, useMemo} from "react";
 import {useWindowSize} from "../../utils/hooks/useWindowSize";
 
 export const About = () => {
@@ -14,6 +14,18 @@ I created a visual interpretation to our upcoming album - Dybbuk.`
     const subsubtitle = `
 The story takes place in an ancient Jewish community. 
 A lonly girl commits suicide. Due to that, she's banned from entering the afterlife. Her soul wanders upon land, untill She possesses another girl. The host girl twitches in pain, drawing the intention of the Jewish community that eventually calls to the “Baal Shem”, a rabbi, to perform an exorcism. Alone and dehumanized, the host girl kills herself out of shame, which brings our story to the beginning  -  an endless sycle of misery and tragedy. `
+
+    // fix weird bug when scrolling doesn't work.
+    useEffect(() => {
+        const listener = (e: any) => {
+            e.preventDefault();
+            const about = document.querySelector('.about');
+            if (!about) return;
+            about.scrollTop += e.deltaY;
+        }
+        document.addEventListener('wheel', listener, {passive: false})
+        return () => document.removeEventListener('wheel', listener)
+    }, [])
 
     const windowSize = useWindowSize();
 
