@@ -41,7 +41,7 @@ const App = () => {
     return (
         <Store.Provider value={{muted, setMuted, isNightMode, setIsNightMode, isPlaying}}>
             <Link to={'/'} style={{
-                zIndex: 1,
+                zIndex: 2,
                 position: 'fixed',
                 left: '5%',
                 bottom: `90%`,
@@ -51,10 +51,11 @@ const App = () => {
             {isNightMode && <div style={{
                 background: 'black',
                 position: 'absolute',
-                width: '100%',
+                width: '90%',
                 height: '12%',
                 top: 0,
-                zIndex: 0
+                left: 0,
+                zIndex: 1
             }}></div>}
             <div style={{
                 width: '100%',
