@@ -48,10 +48,10 @@ const App = () => {
                 textDecoration: 'none',
                 color: 'black'
             }} onClick={() => setIsNightMode(false)}><img src={isNightMode ? LogoNight : LogoDay} alt={''}/></Link>
-            {isNightMode && <div style={{
+            {isNightMode && !isDesktop && <div style={{
                 background: 'black',
                 position: 'absolute',
-                width: '90%',
+                width: '100vw',
                 height: '12%',
                 top: 0,
                 left: 0,
