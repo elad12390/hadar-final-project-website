@@ -15,6 +15,10 @@ export const About = () => {
     const subsubtitle = `
 The story takes place in an ancient Jewish community. 
 A lonely girl commits suicide. Due to that, she's banned from entering the afterlife. Her soul wanders upon land, untill She possesses another girl. The host girl twitches in pain, drawing the intention of the Jewish community that eventually calls to the “Baal Shem”, a rabbi, to perform an exorcism. Alone and dehumanized, the host girl kills herself out of shame, which brings our story to the beginning  -  an endless sycle of misery and tragedy. `
+    useEffect(() => {
+        document.title = 'L\'ied - Dybbuk - About'
+    }, [])
+
 
     // fix weird bug when scrolling doesn't work.
     useEffect(() => {

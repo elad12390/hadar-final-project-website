@@ -28,13 +28,16 @@ export const Home = () => {
     });
     const {muted, setMuted} = useContext(Store);
 
+
+
     useAsyncEffect(async () => {
         if (!size?.width || !size?.height) { return; }
         setCircleSize(Math.min(size.width as number * .7, size.height as number)*(isDesktop ? SIZE_MULTIPLIER : MOBILE_SIZE_MULTIPLIER));
     }, [size])
 
     useEffect(() => {
-        window.addEventListener("wheel", e => e.preventDefault(), { passive:false })
+        window.addEventListener("wheel", e => e.preventDefault(), { passive:false });
+        document.title = 'L\'ied - Dybbuk'
     }, [])
 
     const [largeTextBorderBottom, setLargeTextBorderBottom] = useState(0);
