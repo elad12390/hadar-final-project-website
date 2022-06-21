@@ -1,7 +1,7 @@
-
+$vollkorn: 'vollkorn', serif;
 
 .about-form-container {
-  border: 1px solid #fbfaf8;
+  border: 1px solid transparent;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -15,35 +15,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-top: 3rem;
+    padding: 0 50px;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
 
   .labels {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     letter-spacing: 0.06em;
 
     .first-label {
+      font-style: italic;
       font-weight: 600;
     }
 
     .second-label {
-      font-style: italic;
       font-weight: 400;
     }
   }
 
     input {
-      height: 37px;
-      font-size: 1rem;
+      height: 50px;
+      font-size: 25px;
       padding-left: 12px;
-      width: 100%;
+      width: 95%;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      font-family: $vollkorn;
     }
 
     button.submit {
@@ -51,10 +52,16 @@
       background-color: black;
       color: #fbfaf8;
       border-color: #fbfaf8;
-      width: 100px;
-      height: 40px;
+      width: 160px;
+      height: 70px;
       text-transform: none;
-      font-size: 14px;
+      font-size: 24px;
+      $border-width: 2px;
+      border-top-width: $border-width;
+      border-right-width: $border-width;
+      border-left-width: $border-width;
+      border-bottom-width: $border-width;
+      font-family: $vollkorn;
     }
 
     &.thank-you {

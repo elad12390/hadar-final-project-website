@@ -29,7 +29,7 @@ export const AboutForm = (props: IAboutFormProps) => {
     const english = {
         label: 'Want to listen to the full album?',
         secondLabel: `we can update you on the release-`,
-        placeholder: 'E-mail?',
+        placeholder: 'Email Address?',
         submit: 'Submit',
         dir: 'ltr',
         thankYou: 'THANK YOU !'

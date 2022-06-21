@@ -8,14 +8,13 @@ import FormImg from '../../assets/images/form-img.png';
 import {useIsDesktop} from "../../utils/hooks/useIsDesktop";
 
 export const About = () => {
-    const title = `I Am the vocalist of Li’ed - \nA Progressive Symphonic Metal band.
-I created a visual interpretation to our upcoming album - Dybbuk.`
-
+    const desktopTitle = `I Am the vocalist of Li’ed -\nA Progressive Symphonic Metal band.\nI created a visual interpretation\nto our upcoming album - Dybbuk.`
+    const mobileTitle = `I Am the vocalist of\nLi’ed - A Progressive\nSymphonic Metal\nband. I created a\nvisual interpretation\nto our upcoming\nalbum - Dybbuk.`
     const subtitle = `A Dybbuk is a disembodied human spirit in the jewish folklore that, because of former sins, wanders restlessly until it finds a body of a living person to possess.\n\n`
 
     const subsubtitle = `
 The story takes place in an ancient Jewish community. 
-A lonly girl commits suicide. Due to that, she's banned from entering the afterlife. Her soul wanders upon land, untill She possesses another girl. The host girl twitches in pain, drawing the intention of the Jewish community that eventually calls to the “Baal Shem”, a rabbi, to perform an exorcism. Alone and dehumanized, the host girl kills herself out of shame, which brings our story to the beginning  -  an endless sycle of misery and tragedy. `
+A lonely girl commits suicide. Due to that, she's banned from entering the afterlife. Her soul wanders upon land, untill She possesses another girl. The host girl twitches in pain, drawing the intention of the Jewish community that eventually calls to the “Baal Shem”, a rabbi, to perform an exorcism. Alone and dehumanized, the host girl kills herself out of shame, which brings our story to the beginning  -  an endless sycle of misery and tragedy. `
 
     // fix weird bug when scrolling doesn't work.
     useEffect(() => {
@@ -31,14 +30,17 @@ A lonly girl commits suicide. Due to that, she's banned from entering the afterl
 
     const isDesktop = useIsDesktop();
 
+    const title = isDesktop ? desktopTitle : mobileTitle;
+
     const windowSize = useWindowSize();
 
     const minWindowSize = useMemo(() => Math.min(windowSize.width as number, windowSize.height as number), [windowSize.width, windowSize.height]);
 
     const isSmallerCircle = minWindowSize <  900 || (windowSize.width ?? 0) < 1700;
 
-    const size = isDesktop ? 500 : 300;
+    const size = isDesktop ? 470 : 300;
     return <div className={`about ${isDesktop ? '' : 'mobile'}`}>
+        <div className={'top-padding'}></div>
         <div className={"about-container " + (isSmallerCircle ? 'smaller' : '')}>
             <div className={'title-container'}>
                 <div className="title">
