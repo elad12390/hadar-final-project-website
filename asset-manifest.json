@@ -1,10 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.bb9d3db6.css",
-    "main.js": "/static/js/main.248b648d.js",
+    "main.css": "/static/css/main.765113cc.css",
+    "main.js": "/static/js/main.f969f3d5.js",
     "static/js/787.0fe84981.chunk.js": "/static/js/787.0fe84981.chunk.js",
     "static/media/intro.gif": "/static/media/intro.9e583e8bbc2ce7992a1d.gif",
     "static/media/form-img.png": "/static/media/form-img.d158e9b7fc2a91e1d433.png",
+    "static/media/benguiat-webfont.woff": "/static/media/benguiat-webfont.d9c5647600ae6a110add.woff",
+    "static/media/benguiat_normal-webfont.woff": "/static/media/benguiat_normal-webfont.c18f7498a49ce4cc76f0.woff",
+    "static/media/benguiat-webfont.woff2": "/static/media/benguiat-webfont.d7d571ab2499f9c9d2e2.woff2",
+    "static/media/benguiat_normal-webfont.woff2": "/static/media/benguiat_normal-webfont.8d9e68ec6ac1b427f837.woff2",
     "static/media/subset-NarkisimMF-Bold.eot": "/static/media/subset-NarkisimMF-Bold.49193e102e9649880516.eot",
     "static/media/subset-NarkisimMF-Bold.ttf": "/static/media/subset-NarkisimMF-Bold.dd35a4e17be1ed000aef.ttf",
     "static/media/subset-NarkisimMF-BoldItalic.eot": "/static/media/subset-NarkisimMF-BoldItalic.2a18acd9c807101bdeac.eot",
@@ -25,12 +29,12 @@
     "static/media/subset-NarkisimMF-Italic.woff2": "/static/media/subset-NarkisimMF-Italic.988bdbcf81f9c3c6f19c.woff2",
     "static/media/icon-opening-about.svg": "/static/media/icon-opening-about.89474613e926a3ef58ffbabcf25feaf0.svg",
     "index.html": "/index.html",
-    "main.bb9d3db6.css.map": "/static/css/main.bb9d3db6.css.map",
-    "main.248b648d.js.map": "/static/js/main.248b648d.js.map",
+    "main.765113cc.css.map": "/static/css/main.765113cc.css.map",
+    "main.f969f3d5.js.map": "/static/js/main.f969f3d5.js.map",
     "787.0fe84981.chunk.js.map": "/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb9d3db6.css",
-    "static/js/main.248b648d.js"
+    "static/css/main.765113cc.css",
+    "static/js/main.f969f3d5.js"
   ]
 }
