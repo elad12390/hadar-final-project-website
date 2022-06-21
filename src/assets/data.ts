@@ -53,7 +53,7 @@ export const songSections: SongSection[] = [
             'between This World\n' +
             'and the World to Come',
         title: '3.rain',
-        videoUrl: `${bucketURL}/Rain.m4v`,
+        videoUrl: `${bucketURL}/Rain.mp4`,
         subtitles: parser.fromSrt(Rain)
     },
     {
@@ -64,7 +64,7 @@ export const songSections: SongSection[] = [
             'Marooned in the ocean \n' +
             'Left to wither in the garden\n',
         title: '4.marooned',
-        videoUrl: `${bucketURL}/Marooned.m4v`,
+        videoUrl: `${bucketURL}/Marooned.mp4`,
         subtitles: parser.fromSrt(Marooned)
     },
     {
@@ -113,7 +113,7 @@ export const songSections: SongSection[] = [
         description: '',
         lyrics: 'צא צא צא',
         title: '8.gerush',
-        videoUrl: `${bucketURL}/Gerush.m4v`,
+        videoUrl: `${bucketURL}/gerush.mp4`,
         subtitles: parser.fromSrt(Gerush)
     },
     {
