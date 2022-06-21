@@ -15,7 +15,7 @@
   transform: scale(1.5);
   pointer-events: none;
   border-radius: 50%;
-  background: white;
+  background: #fbfaf8;
   width: 4rem;
   height: 4rem;
   display: flex;
