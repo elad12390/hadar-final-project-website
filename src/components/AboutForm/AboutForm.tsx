@@ -27,7 +27,7 @@ export const AboutForm = (props: IAboutFormProps) => {
             { email },
             {
                 headers: {
-                    'Content-Type': 'text/json'
+                    'Content-Type': 'application/json'
                 }
             }
         ).then((result) => console.log(result));
