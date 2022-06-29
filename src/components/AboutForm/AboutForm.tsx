@@ -23,7 +23,7 @@ export const AboutForm = (props: IAboutFormProps) => {
         event.preventDefault();
 
         axios.post(`${process.env.REACT_APP_SERVER_URL}/email`, { email }).then((result) => console.log(result));
-        // setSentEmail(true);
+        setSentEmail(true);
     }, [email])
 
     const english = {
