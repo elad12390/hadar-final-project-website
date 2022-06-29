@@ -22,7 +22,15 @@ export const AboutForm = (props: IAboutFormProps) => {
     const submit = useCallback((event) => {
         event.preventDefault();
 
-        axios.post(`${process.env.REACT_APP_SERVER_URL}/email`, { email }).then((result) => console.log(result));
+        axios.post(
+            `${process.env.REACT_APP_SERVER_URL}/email`,
+            { email },
+            {
+                headers: {
+                    'Content-Type': 'text/json'
+                }
+            }
+        ).then((result) => console.log(result));
         setSentEmail(true);
     }, [email])
 
